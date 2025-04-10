@@ -1,0 +1,960 @@
+Analysis & Synthesis report for VGA
+Tue Oct 01 09:51:48 2024
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |toplevel_tic_tac_toe|tic_tac_toe_fsm:mef|current_state
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: vgaController:vgaCont
+ 15. Port Connectivity Checks: "Button_debounce:boton2_inst"
+ 16. Port Connectivity Checks: "Button_debounce:boton1_inst"
+ 17. Port Connectivity Checks: "videoGen:vgagen"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+ 21. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Oct 01 09:51:48 2024       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; VGA                                         ;
+; Top-level Entity Name           ; toplevel_tic_tac_toe                        ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 120                                         ;
+; Total pins                      ; 65                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 37                                          ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                               ;
++---------------------------------------------------------------------------------+----------------------+--------------------+
+; Option                                                                          ; Setting              ; Default Value      ;
++---------------------------------------------------------------------------------+----------------------+--------------------+
+; Device                                                                          ; 5CSXFC6D6F31C6       ;                    ;
+; Top-level entity name                                                           ; toplevel_tic_tac_toe ; VGA                ;
+; Family name                                                                     ; Cyclone V            ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                  ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                   ; On                 ;
+; Enable compact report table                                                     ; Off                  ; Off                ;
+; Restructure Multiplexers                                                        ; Auto                 ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                  ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                  ; Off                ;
+; Preserve fewer node names                                                       ; On                   ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable               ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001         ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993            ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto                 ; Auto               ;
+; Safe State Machine                                                              ; Off                  ; Off                ;
+; Extract Verilog State Machines                                                  ; On                   ; On                 ;
+; Extract VHDL State Machines                                                     ; On                   ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                  ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000                 ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                  ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                   ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                   ; On                 ;
+; Parallel Synthesis                                                              ; On                   ; On                 ;
+; DSP Block Balancing                                                             ; Auto                 ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                   ; On                 ;
+; Power-Up Don't Care                                                             ; On                   ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                  ; Off                ;
+; Remove Duplicate Registers                                                      ; On                   ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                  ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                  ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                  ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                  ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                  ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                   ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                  ; Off                ;
+; Optimization Technique                                                          ; Balanced             ; Balanced           ;
+; Carry Chain Length                                                              ; 70                   ; 70                 ;
+; Auto Carry Chains                                                               ; On                   ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                   ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                  ; Off                ;
+; Auto ROM Replacement                                                            ; On                   ; On                 ;
+; Auto RAM Replacement                                                            ; On                   ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                   ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto                 ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                 ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                   ; On                 ;
+; Strict RAM Replacement                                                          ; Off                  ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                   ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                  ; Off                ;
+; Auto Resource Sharing                                                           ; Off                  ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                  ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                  ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                  ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                   ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                  ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                   ; On                 ;
+; Report Parameter Settings                                                       ; On                   ; On                 ;
+; Report Source Assignments                                                       ; On                   ; On                 ;
+; Report Connectivity Checks                                                      ; On                   ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                  ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                    ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation   ; Normal compilation ;
+; HDL message level                                                               ; Level2               ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                  ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                 ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                 ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                  ; 100                ;
+; Clock MUX Protection                                                            ; On                   ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                  ; Off                ;
+; Block Design Naming                                                             ; Auto                 ; Auto               ;
+; SDC constraint protection                                                       ; Off                  ; Off                ;
+; Synthesis Effort                                                                ; Auto                 ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                   ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                  ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium               ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                 ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                   ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                   ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                  ; Off                ;
++---------------------------------------------------------------------------------+----------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                         ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+---------+
+; vgaController.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/vgaController.sv        ;         ;
+; pll.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/pll.sv                  ;         ;
+; videoGen.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/videoGen.sv             ;         ;
+; tic_tac_toe_fsm.sv               ; yes             ; User SystemVerilog HDL File  ; C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/tic_tac_toe_fsm.sv      ;         ;
+; toplevel_tic_tac_toe.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv ;         ;
+; startScreen.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/startScreen.sv          ;         ;
+; matrixTablero.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTablero.sv        ;         ;
+; matrixTableroControl.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv ;         ;
+; Button_debonce.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Button_debonce.sv       ;         ;
+; Timer.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Timer.sv                ;         ;
+; Full_Timer.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Full_Timer.sv           ;         ;
+; BCD_Visualizer.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/BCD_Visualizer.sv       ;         ;
+; gameOverScreen.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/gameOverScreen.sv       ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 572                      ;
+;                                             ;                          ;
+; Combinational ALUT usage for logic          ; 1022                     ;
+;     -- 7 input functions                    ; 9                        ;
+;     -- 6 input functions                    ; 111                      ;
+;     -- 5 input functions                    ; 115                      ;
+;     -- 4 input functions                    ; 140                      ;
+;     -- <=3 input functions                  ; 647                      ;
+;                                             ;                          ;
+; Dedicated logic registers                   ; 120                      ;
+;                                             ;                          ;
+; I/O pins                                    ; 65                       ;
+;                                             ;                          ;
+; Total DSP Blocks                            ; 37                       ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; videoGen:vgagen|Mult18~8 ;
+; Maximum fan-out                             ; 218                      ;
+; Total fan-out                               ; 4539                     ;
+; Average fan-out                             ; 3.47                     ;
++---------------------------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                   ;
++-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node                          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                              ; Entity Name          ; Library Name ;
++-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------+----------------------+--------------+
+; |toplevel_tic_tac_toe                               ; 1022 (24)           ; 120 (0)                   ; 0                 ; 37         ; 65   ; 0            ; |toplevel_tic_tac_toe                                                            ; toplevel_tic_tac_toe ; work         ;
+;    |BCD_Visualizer:segBCD_inst|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_tic_tac_toe|BCD_Visualizer:segBCD_inst                                 ; BCD_Visualizer       ; work         ;
+;    |Button_debounce:boton3_inst|                    ; 38 (1)              ; 30 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |toplevel_tic_tac_toe|Button_debounce:boton3_inst                                ; Button_debounce      ; work         ;
+;       |D_FF_with_Enable:dff_0|                      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_tic_tac_toe|Button_debounce:boton3_inst|D_FF_with_Enable:dff_0         ; D_FF_with_Enable     ; work         ;
+;       |D_FF_with_Enable:dff_1|                      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_tic_tac_toe|Button_debounce:boton3_inst|D_FF_with_Enable:dff_1         ; D_FF_with_Enable     ; work         ;
+;       |D_FF_with_Enable:dff_2|                      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_tic_tac_toe|Button_debounce:boton3_inst|D_FF_with_Enable:dff_2         ; D_FF_with_Enable     ; work         ;
+;       |Slow_Clock_Enable:slow_clk_gen|              ; 37 (37)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel_tic_tac_toe|Button_debounce:boton3_inst|Slow_Clock_Enable:slow_clk_gen ; Slow_Clock_Enable    ; work         ;
+;    |Full_Timer:timer_inst|                          ; 38 (5)              ; 33 (5)                    ; 0                 ; 0          ; 0    ; 0            ; |toplevel_tic_tac_toe|Full_Timer:timer_inst                                      ; Full_Timer           ; work         ;
+;       |Timer:timer_blocks[0].timer_inst|            ; 33 (33)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel_tic_tac_toe|Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst     ; Timer                ; work         ;
+;    |gameOverScreen:pantallaFinal|                   ; 65 (65)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_tic_tac_toe|gameOverScreen:pantallaFinal                               ; gameOverScreen       ; work         ;
+;    |matrixTablero:matrixTablero_inst|               ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_tic_tac_toe|matrixTablero:matrixTablero_inst                           ; matrixTablero        ; work         ;
+;    |matrixTableroControl:matrixTableroControl_inst| ; 44 (44)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel_tic_tac_toe|matrixTableroControl:matrixTableroControl_inst             ; matrixTableroControl ; work         ;
+;    |pll:vgapll|                                     ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_tic_tac_toe|pll:vgapll                                                 ; pll                  ; work         ;
+;    |startScreen:pantallaStart|                      ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_tic_tac_toe|startScreen:pantallaStart                                  ; startScreen          ; work         ;
+;    |tic_tac_toe_fsm:mef|                            ; 16 (16)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel_tic_tac_toe|tic_tac_toe_fsm:mef                                        ; tic_tac_toe_fsm      ; work         ;
+;    |vgaController:vgaCont|                          ; 30 (30)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel_tic_tac_toe|vgaController:vgaCont                                      ; vgaController        ; work         ;
+;    |videoGen:vgagen|                                ; 743 (743)           ; 0 (0)                     ; 0                 ; 37         ; 0    ; 0            ; |toplevel_tic_tac_toe|videoGen:vgagen                                            ; videoGen             ; work         ;
++-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary  ;
++---------------------------------+-------------+
+; Statistic                       ; Number Used ;
++---------------------------------+-------------+
+; Two Independent 18x18           ; 19          ;
+; Sum of two 18x18                ; 18          ;
+; Total number of DSP blocks      ; 37          ;
+;                                 ;             ;
+; Fixed Point Unsigned Multiplier ; 55          ;
++---------------------------------+-------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |toplevel_tic_tac_toe|tic_tac_toe_fsm:mef|current_state                                                                                                        ;
++-------------------------+-------------------------+-------------------------+------------------------+------------------------+-----------------------+------------------------+
+; Name                    ; current_state.GAME_OVER ; current_state.CHECK_WIN ; current_state.TURNO_P2 ; current_state.TURNO_P1 ; current_state.TABLERO ; current_state.P_INICIO ;
++-------------------------+-------------------------+-------------------------+------------------------+------------------------+-----------------------+------------------------+
+; current_state.P_INICIO  ; 0                       ; 0                       ; 0                      ; 0                      ; 0                     ; 0                      ;
+; current_state.TABLERO   ; 0                       ; 0                       ; 0                      ; 0                      ; 1                     ; 1                      ;
+; current_state.TURNO_P1  ; 0                       ; 0                       ; 0                      ; 1                      ; 0                     ; 1                      ;
+; current_state.TURNO_P2  ; 0                       ; 0                       ; 1                      ; 0                      ; 0                     ; 1                      ;
+; current_state.CHECK_WIN ; 0                       ; 1                       ; 0                      ; 0                      ; 0                     ; 1                      ;
+; current_state.GAME_OVER ; 1                       ; 0                       ; 0                      ; 0                      ; 0                     ; 1                      ;
++-------------------------+-------------------------+-------------------------+------------------------+------------------------+-----------------------+------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                               ;
++---------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+; Register name                                                             ; Reason for Removal                                                                   ;
++---------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+; tic_tac_toe_fsm:mef|estado[3]                                             ; Stuck at GND due to stuck port data_in                                               ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|pulse_out         ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|pulse_out         ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|pulse_out         ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|pulse_out         ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|pulse_out         ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|pulse_out         ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|pulse_out         ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|pulse_out         ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|pulse_out         ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|pulse_out         ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|pulse_out         ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|pulse_out         ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|pulse_out          ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|pulse_out         ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|pulse_out          ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|pulse_out         ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|pulse_out          ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|pulse_out         ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|pulse_out          ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|pulse_out         ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|pulse_out          ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|pulse_out         ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|pulse_out          ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|pulse_out         ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|pulse_out          ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|pulse_out         ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|pulse_out          ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|pulse_out         ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|pulse_out          ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|pulse_out         ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[25] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[25] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[25] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[25] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[25] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[25] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[25] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[25] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[25] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[25] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[25] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[25] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[25]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[25] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[25]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[25] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[25]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[25] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[25]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[25] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[25]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[25] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[25]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[25] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[25]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[25] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[25]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[25] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[25]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[25] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[23] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[23] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[23] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[23] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[23] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[23] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[23] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[23] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[23] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[23] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[23] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[23] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[23]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[23] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[23]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[23] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[23]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[23] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[23]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[23] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[23]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[23] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[23]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[23] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[23]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[23] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[23]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[23] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[23]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[23] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[22] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[22] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[22] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[22] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[22] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[22] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[22] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[22] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[22] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[22] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[22] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[22] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[22]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[22] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[22]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[22] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[22]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[22] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[22]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[22] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[22]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[22] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[22]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[22] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[22]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[22] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[22]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[22] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[22]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[22] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[21] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[21] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[21] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[21] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[21] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[21] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[21] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[21] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[21] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[21] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[21] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[21] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[21]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[21] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[21]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[21] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[21]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[21] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[21]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[21] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[21]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[21] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[21]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[21] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[21]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[21] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[21]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[21] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[21]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[21] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[20] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[20] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[20] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[20] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[20] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[20] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[20] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[20] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[20] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[20] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[20] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[20] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[20]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[20] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[20]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[20] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[20]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[20] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[20]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[20] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[20]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[20] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[20]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[20] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[20]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[20] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[20]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[20] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[20]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[20] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[19] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[19] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[19] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[19] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[19] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[19] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[19] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[19] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[19] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[19] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[19] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[19] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[19]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[19] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[19]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[19] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[19]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[19] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[19]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[19] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[19]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[19] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[19]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[19] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[19]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[19] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[19]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[19] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[19]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[19] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[17] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[17] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[17] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[17] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[17] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[17] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[17] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[17] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[17] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[17] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[17] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[17] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[17]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[17] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[17]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[17] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[17]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[17] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[17]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[17] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[17]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[17] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[17]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[17] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[17]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[17] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[17]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[17] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[17]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[17] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[15] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[15] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[15] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[15] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[15] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[15] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[15] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[15] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[15] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[15] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[15] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[15] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[15]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[15] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[15]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[15] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[15]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[15] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[15]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[15] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[15]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[15] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[15]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[15] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[15]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[15] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[15]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[15] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[15]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[15] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[14] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[14] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[14] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[14] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[14] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[14] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[14] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[14] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[14] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[14] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[14] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[14] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[14]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[14] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[14]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[14] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[14]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[14] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[14]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[14] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[14]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[14] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[14]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[14] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[14]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[14] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[14]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[14] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[14]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[14] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[13] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[13] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[13] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[13] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[13] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[13] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[13] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[13] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[13] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[13] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[13] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[13] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[13]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[13] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[13]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[13] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[13]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[13] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[13]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[13] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[13]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[13] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[13]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[13] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[13]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[13] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[13]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[13] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[13]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[13] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[12] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[12] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[12] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[12] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[12] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[12] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[12] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[12] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[12] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[12] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[12] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[12] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[12]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[12] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[12]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[12] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[12]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[12] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[12]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[12] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[12]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[12] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[12]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[12] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[12]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[12] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[12]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[12] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[12]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[12] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[6]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[6]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[6]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[6]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[6]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[6]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[6]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[6]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[6]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[6]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[6]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[6]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[6]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[6]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[6]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[6]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[6]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[6]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[6]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[6]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[6]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[6]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[6]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[6]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[6]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[6]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[6]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[6]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[6]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[6]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[5]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[5]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[5]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[5]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[5]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[5]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[5]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[5]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[5]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[5]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[5]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[5]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[5]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[5]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[5]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[5]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[5]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[5]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[5]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[5]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[5]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[5]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[5]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[5]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[5]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[5]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[5]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[5]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[5]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[5]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[4]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[4]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[4]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[4]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[4]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[4]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[4]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[4]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[4]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[4]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[4]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[4]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[4]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[4]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[4]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[4]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[4]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[4]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[4]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[4]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[4]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[4]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[4]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[4]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[4]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[4]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[4]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[4]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[4]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[4]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[3]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[3]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[3]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[3]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[3]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[3]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[3]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[3]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[3]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[3]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[3]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[3]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[3]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[3]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[3]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[3]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[3]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[3]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[3]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[3]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[3]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[3]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[3]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[3]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[3]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[3]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[3]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[3]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[3]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[3]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[2]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[2]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[2]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[2]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[2]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[2]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[2]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[2]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[2]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[2]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[2]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[2]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[2]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[2]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[2]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[2]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[2]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[2]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[2]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[2]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[2]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[2]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[2]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[2]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[2]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[2]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[2]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[2]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[2]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[2]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[1]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[1]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[1]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[1]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[1]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[1]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[1]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[1]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[1]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[1]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[1]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[1]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[1]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[1]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[1]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[1]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[1]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[1]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[1]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[1]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[1]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[1]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[1]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[1]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[1]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[1]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[1]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[1]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[1]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[1]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[0]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[0]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[0]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[0]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[0]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[0]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[0]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[0]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[0]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[0]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[0]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[0]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[0]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[0]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[0]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[0]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[0]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[0]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[0]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[0]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[0]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[0]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[0]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[0]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[0]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[0]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[0]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[0]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[0]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[0]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[26] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[26] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[26] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[26] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[26] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[26] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[26] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[26] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[26] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[26] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[26] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[26] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[26]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[26] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[26]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[26] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[26]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[26] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[26]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[26] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[26]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[26] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[26]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[26] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[26]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[26] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[26]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[26] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[26]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[26] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[24] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[24] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[24] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[24] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[24] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[24] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[24] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[24] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[24] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[24] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[24] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[24] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[24]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[24] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[24]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[24] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[24]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[24] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[24]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[24] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[24]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[24] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[24]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[24] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[24]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[24] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[24]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[24] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[24]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[24] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[18] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[18] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[18] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[18] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[18] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[18] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[18] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[18] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[18] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[18] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[18] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[18] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[18]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[18] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[18]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[18] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[18]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[18] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[18]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[18] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[18]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[18] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[18]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[18] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[18]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[18] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[18]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[18] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[18]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[18] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[16] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[16] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[16] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[16] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[16] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[16] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[16] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[16] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[16] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[16] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[16] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[16] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[16]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[16] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[16]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[16] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[16]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[16] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[16]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[16] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[16]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[16] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[16]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[16] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[16]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[16] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[16]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[16] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[16]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[16] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[11] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[11] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[11] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[11] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[11] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[11] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[11] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[11] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[11] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[11] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[11] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[11] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[11]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[11] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[11]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[11] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[11]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[11] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[11]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[11] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[11]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[11] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[11]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[11] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[11]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[11] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[11]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[11] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[11]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[11] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[10] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[10] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[10] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[10] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[10] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[10] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[10] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[10] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[10] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[10] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[10] ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[10] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[10]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[10] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[10]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[10] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[10]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[10] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[10]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[10] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[10]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[10] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[10]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[10] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[10]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[10] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[10]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[10] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[10]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[10] ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[9]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[9]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[9]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[9]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[9]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[9]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[9]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[9]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[9]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[9]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[9]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[9]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[9]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[9]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[9]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[9]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[9]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[9]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[9]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[9]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[9]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[9]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[9]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[9]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[9]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[9]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[9]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[9]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[9]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[9]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[8]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[8]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[8]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[8]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[8]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[8]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[8]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[8]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[8]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[8]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[8]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[8]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[8]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[8]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[8]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[8]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[8]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[8]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[8]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[8]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[8]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[8]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[8]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[8]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[8]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[8]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[8]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[8]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[8]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[8]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[10].timer_inst|cycle_counter[7]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[7]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[11].timer_inst|cycle_counter[7]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[7]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[12].timer_inst|cycle_counter[7]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[7]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[13].timer_inst|cycle_counter[7]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[7]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[14].timer_inst|cycle_counter[7]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[7]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[15].timer_inst|cycle_counter[7]  ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[7]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[1].timer_inst|cycle_counter[7]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[7]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[2].timer_inst|cycle_counter[7]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[7]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[3].timer_inst|cycle_counter[7]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[7]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[4].timer_inst|cycle_counter[7]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[7]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[5].timer_inst|cycle_counter[7]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[7]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[6].timer_inst|cycle_counter[7]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[7]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[7].timer_inst|cycle_counter[7]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[7]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[8].timer_inst|cycle_counter[7]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[7]  ;
+; Full_Timer:timer_inst|Timer:timer_blocks[9].timer_inst|cycle_counter[7]   ; Merged with Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst|cycle_counter[7]  ;
+; tic_tac_toe_fsm:mef|current_state~4                                       ; Lost fanout                                                                          ;
+; tic_tac_toe_fsm:mef|current_state~5                                       ; Lost fanout                                                                          ;
+; tic_tac_toe_fsm:mef|current_state~6                                       ; Lost fanout                                                                          ;
+; tic_tac_toe_fsm:mef|current_state~7                                       ; Lost fanout                                                                          ;
+; Total Number of Removed Registers = 425                                   ;                                                                                      ;
++---------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 120   ;
+; Number of registers using Synchronous Clear  ; 74    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 69    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 26    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------+
+; Inverted Register Statistics                                      ;
++---------------------------------------------------------+---------+
+; Inverted Register                                       ; Fan out ;
++---------------------------------------------------------+---------+
+; tic_tac_toe_fsm:mef|led_p1                              ; 1       ;
+; tic_tac_toe_fsm:mef|led_p2                              ; 1       ;
+; tic_tac_toe_fsm:mef|reset_timer                         ; 6       ;
+; matrixTableroControl:matrixTableroControl_inst|index[3] ; 13      ;
+; Full_Timer:timer_inst|reset_signal                      ; 28      ;
+; Total number of inverted registers = 5                  ;         ;
++---------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |toplevel_tic_tac_toe|tic_tac_toe_fsm:mef|Selector2 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vgaController:vgaCont ;
++----------------+------------+--------------------------------------+
+; Parameter Name ; Value      ; Type                                 ;
++----------------+------------+--------------------------------------+
+; HACTIVE        ; 1010000000 ; Unsigned Binary                      ;
+; HFP            ; 0000010000 ; Unsigned Binary                      ;
+; HSYN           ; 0001100000 ; Unsigned Binary                      ;
+; HBP            ; 0000110000 ; Unsigned Binary                      ;
+; HMAX           ; 1100100000 ; Unsigned Binary                      ;
+; VBP            ; 0000100001 ; Unsigned Binary                      ;
+; VACTIVE        ; 0111100000 ; Unsigned Binary                      ;
+; VFP            ; 0000001010 ; Unsigned Binary                      ;
+; VSYN           ; 0000000010 ; Unsigned Binary                      ;
+; VMAX           ; 1000001101 ; Unsigned Binary                      ;
++----------------+------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Button_debounce:boton2_inst"                                                                 ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; button_stable ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Button_debounce:boton1_inst"                                                                 ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; button_stable ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "videoGen:vgagen"                                                                                                                             ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; clk   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; rst_n ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 120                         ;
+;     CLR               ; 29                          ;
+;     CLR SCLR          ; 27                          ;
+;     ENA               ; 3                           ;
+;     ENA CLR           ; 13                          ;
+;     ENA SCLR          ; 10                          ;
+;     SCLR              ; 37                          ;
+;     plain             ; 1                           ;
+; arriav_lcell_comb     ; 1028                        ;
+;     arith             ; 422                         ;
+;         0 data inputs ; 12                          ;
+;         1 data inputs ; 118                         ;
+;         2 data inputs ; 292                         ;
+;     extend            ; 9                           ;
+;         7 data inputs ; 9                           ;
+;     normal            ; 471                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 38                          ;
+;         3 data inputs ; 58                          ;
+;         4 data inputs ; 140                         ;
+;         5 data inputs ; 115                         ;
+;         6 data inputs ; 111                         ;
+;     shared            ; 126                         ;
+;         3 data inputs ; 126                         ;
+; arriav_mac            ; 37                          ;
+; boundary_port         ; 65                          ;
+;                       ;                             ;
+; Max LUT depth         ; 9.40                        ;
+; Average LUT depth     ; 6.83                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Tue Oct 01 09:51:34 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA -c VGA
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file vgacontroller.sv
+    Info (12023): Found entity 1: vgaController File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/vgaController.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file pll.sv
+    Info (12023): Found entity 1: pll File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/pll.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file videogen.sv
+    Info (12023): Found entity 1: videoGen File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/videoGen.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file tic_tac_toe_fsm.sv
+    Info (12023): Found entity 1: tic_tac_toe_fsm File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/tic_tac_toe_fsm.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_tic_tac_toe.sv
+    Info (12023): Found entity 1: toplevel_tic_tac_toe File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file startscreen.sv
+    Info (12023): Found entity 1: startScreen File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/startScreen.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file matrixtablero.sv
+    Info (12023): Found entity 1: matrixTablero File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTablero.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file matrixtablerocontrol.sv
+    Info (12023): Found entity 1: matrixTableroControl File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_tic_tac_toe_tb.sv
+    Info (12023): Found entity 1: tic_tac_toe_fsm_tb File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe_tb.sv Line: 8
+Info (12021): Found 3 design units, including 3 entities, in source file button_debonce.sv
+    Info (12023): Found entity 1: Button_debounce File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Button_debonce.sv Line: 6
+    Info (12023): Found entity 2: Slow_Clock_Enable File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Button_debonce.sv Line: 27
+    Info (12023): Found entity 3: D_FF_with_Enable File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Button_debonce.sv Line: 46
+Info (12021): Found 1 design units, including 1 entities, in source file timer.sv
+    Info (12023): Found entity 1: Timer File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Timer.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file full_timer.sv
+    Info (12023): Found entity 1: Full_Timer File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Full_Timer.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file bcd_visualizer.sv
+    Info (12023): Found entity 1: BCD_Visualizer File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/BCD_Visualizer.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file gameoverscreen.sv
+    Info (12023): Found entity 1: gameOverScreen File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/gameOverScreen.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file spi_main.sv
+    Info (12023): Found entity 1: SPI_main File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/SPI_main.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at toplevel_tic_tac_toe.sv(97): created implicit net for "Idebounced" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 97
+Warning (10236): Verilog HDL Implicit Net warning at toplevel_tic_tac_toe.sv(103): created implicit net for "Bdebounced" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 103
+Warning (10236): Verilog HDL Implicit Net warning at toplevel_tic_tac_toe.sv(109): created implicit net for "Wdebounced" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 109
+Info (12127): Elaborating entity "toplevel_tic_tac_toe" for the top level hierarchy
+Info (12128): Elaborating entity "Full_Timer" for hierarchy "Full_Timer:timer_inst" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 39
+Warning (10230): Verilog HDL assignment warning at Full_Timer.sv(38): truncated value with size 32 to match size of target (4) File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Full_Timer.sv Line: 38
+Info (12128): Elaborating entity "Timer" for hierarchy "Full_Timer:timer_inst|Timer:timer_blocks[0].timer_inst" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Full_Timer.sv Line: 25
+Warning (10230): Verilog HDL assignment warning at Timer.sv(22): truncated value with size 32 to match size of target (27) File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Timer.sv Line: 22
+Info (12128): Elaborating entity "BCD_Visualizer" for hierarchy "BCD_Visualizer:segBCD_inst" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 46
+Info (12128): Elaborating entity "tic_tac_toe_fsm" for hierarchy "tic_tac_toe_fsm:mef" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 54
+Info (10264): Verilog HDL Case Statement information at tic_tac_toe_fsm.sv(35): all case item expressions in this case statement are onehot File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/tic_tac_toe_fsm.sv Line: 35
+Info (10264): Verilog HDL Case Statement information at tic_tac_toe_fsm.sv(115): all case item expressions in this case statement are onehot File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/tic_tac_toe_fsm.sv Line: 115
+Info (12128): Elaborating entity "pll" for hierarchy "pll:vgapll" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 59
+Info (12128): Elaborating entity "vgaController" for hierarchy "vgaController:vgaCont" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 61
+Info (12128): Elaborating entity "videoGen" for hierarchy "videoGen:vgagen" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 71
+Info (12128): Elaborating entity "gameOverScreen" for hierarchy "gameOverScreen:pantallaFinal" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 80
+Warning (10230): Verilog HDL assignment warning at gameOverScreen.sv(27): truncated value with size 32 to match size of target (11) File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/gameOverScreen.sv Line: 27
+Warning (10230): Verilog HDL assignment warning at gameOverScreen.sv(28): truncated value with size 32 to match size of target (11) File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/gameOverScreen.sv Line: 28
+Warning (10230): Verilog HDL assignment warning at gameOverScreen.sv(29): truncated value with size 32 to match size of target (11) File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/gameOverScreen.sv Line: 29
+Warning (10230): Verilog HDL assignment warning at gameOverScreen.sv(33): truncated value with size 32 to match size of target (11) File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/gameOverScreen.sv Line: 33
+Warning (10230): Verilog HDL assignment warning at gameOverScreen.sv(34): truncated value with size 32 to match size of target (11) File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/gameOverScreen.sv Line: 34
+Warning (10230): Verilog HDL assignment warning at gameOverScreen.sv(35): truncated value with size 32 to match size of target (11) File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/gameOverScreen.sv Line: 35
+Info (12128): Elaborating entity "startScreen" for hierarchy "startScreen:pantallaStart" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 89
+Warning (10230): Verilog HDL assignment warning at startScreen.sv(26): truncated value with size 32 to match size of target (11) File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/startScreen.sv Line: 26
+Warning (10230): Verilog HDL assignment warning at startScreen.sv(27): truncated value with size 32 to match size of target (11) File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/startScreen.sv Line: 27
+Warning (10230): Verilog HDL assignment warning at startScreen.sv(28): truncated value with size 32 to match size of target (11) File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/startScreen.sv Line: 28
+Warning (10230): Verilog HDL assignment warning at startScreen.sv(29): truncated value with size 32 to match size of target (11) File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/startScreen.sv Line: 29
+Info (12128): Elaborating entity "Button_debounce" for hierarchy "Button_debounce:boton1_inst" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 98
+Info (12128): Elaborating entity "Slow_Clock_Enable" for hierarchy "Button_debounce:boton1_inst|Slow_Clock_Enable:slow_clk_gen" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Button_debonce.sv Line: 14
+Warning (10230): Verilog HDL assignment warning at Button_debonce.sv(38): truncated value with size 32 to match size of target (27) File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Button_debonce.sv Line: 38
+Info (12128): Elaborating entity "D_FF_with_Enable" for hierarchy "Button_debounce:boton1_inst|D_FF_with_Enable:dff_0" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Button_debonce.sv Line: 17
+Info (12128): Elaborating entity "matrixTableroControl" for hierarchy "matrixTableroControl:matrixTableroControl_inst" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 123
+Info (12128): Elaborating entity "matrixTablero" for hierarchy "matrixTablero:matrixTablero_inst" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 132
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[0]" is converted into an equivalent circuit using register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[0]~_emulated" and latch "matrixTableroControl:matrixTableroControl_inst|temp_matrix[0]~1" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv Line: 43
+    Warning (13310): Register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[1]" is converted into an equivalent circuit using register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[1]~_emulated" and latch "matrixTableroControl:matrixTableroControl_inst|temp_matrix[1]~5" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv Line: 43
+    Warning (13310): Register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[2]" is converted into an equivalent circuit using register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[2]~_emulated" and latch "matrixTableroControl:matrixTableroControl_inst|temp_matrix[2]~9" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv Line: 43
+    Warning (13310): Register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[3]" is converted into an equivalent circuit using register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[3]~_emulated" and latch "matrixTableroControl:matrixTableroControl_inst|temp_matrix[3]~13" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv Line: 43
+    Warning (13310): Register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[4]" is converted into an equivalent circuit using register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[4]~_emulated" and latch "matrixTableroControl:matrixTableroControl_inst|temp_matrix[4]~17" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv Line: 43
+    Warning (13310): Register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[5]" is converted into an equivalent circuit using register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[5]~_emulated" and latch "matrixTableroControl:matrixTableroControl_inst|temp_matrix[5]~21" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv Line: 43
+    Warning (13310): Register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[6]" is converted into an equivalent circuit using register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[6]~_emulated" and latch "matrixTableroControl:matrixTableroControl_inst|temp_matrix[6]~25" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv Line: 43
+    Warning (13310): Register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[7]" is converted into an equivalent circuit using register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[7]~_emulated" and latch "matrixTableroControl:matrixTableroControl_inst|temp_matrix[7]~29" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv Line: 43
+    Warning (13310): Register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[8]" is converted into an equivalent circuit using register "matrixTableroControl:matrixTableroControl_inst|temp_matrix[8]~_emulated" and latch "matrixTableroControl:matrixTableroControl_inst|temp_matrix[8]~33" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv Line: 43
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "estado[3]" is stuck at GND File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 8
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/output_files/VGA.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "TEST" File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 7
+Info (21057): Implemented 1160 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 54 output pins
+    Info (21061): Implemented 1058 logic cells
+    Info (21062): Implemented 37 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 32 warnings
+    Info: Peak virtual memory: 4843 megabytes
+    Info: Processing ended: Tue Oct 01 09:51:48 2024
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:19
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/output_files/VGA.map.smsg.
+
+

@@ -1,0 +1,200 @@
+# Reading pref.tcl
+# do VGA_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA {C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/vgaController.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:46:21 on Sep 30,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA" C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/vgaController.sv 
+# -- Compiling module vgaController
+# 
+# Top level modules:
+# 	vgaController
+# End time: 21:46:21 on Sep 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA {C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/pll.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:46:21 on Sep 30,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA" C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/pll.sv 
+# -- Compiling module pll
+# 
+# Top level modules:
+# 	pll
+# End time: 21:46:21 on Sep 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA {C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/videoGen.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:46:21 on Sep 30,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA" C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/videoGen.sv 
+# -- Compiling module videoGen
+# 
+# Top level modules:
+# 	videoGen
+# End time: 21:46:21 on Sep 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA {C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/tic_tac_toe_fsm.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:46:21 on Sep 30,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA" C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/tic_tac_toe_fsm.sv 
+# -- Compiling module tic_tac_toe_fsm
+# 
+# Top level modules:
+# 	tic_tac_toe_fsm
+# End time: 21:46:21 on Sep 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA {C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:46:21 on Sep 30,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA" C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv 
+# -- Compiling module toplevel_tic_tac_toe
+# 
+# Top level modules:
+# 	toplevel_tic_tac_toe
+# End time: 21:46:22 on Sep 30,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA {C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/startScreen.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:46:22 on Sep 30,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA" C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/startScreen.sv 
+# -- Compiling module startScreen
+# 
+# Top level modules:
+# 	startScreen
+# End time: 21:46:22 on Sep 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA {C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTablero.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:46:22 on Sep 30,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA" C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTablero.sv 
+# -- Compiling module matrixTablero
+# 
+# Top level modules:
+# 	matrixTablero
+# End time: 21:46:22 on Sep 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA {C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:46:22 on Sep 30,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA" C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv 
+# -- Compiling module matrixTableroControl
+# 
+# Top level modules:
+# 	matrixTableroControl
+# End time: 21:46:22 on Sep 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA {C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Button_debonce.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:46:22 on Sep 30,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA" C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Button_debonce.sv 
+# -- Compiling module Button_debounce
+# -- Compiling module Slow_Clock_Enable
+# -- Compiling module D_FF_with_Enable
+# 
+# Top level modules:
+# 	Button_debounce
+# End time: 21:46:23 on Sep 30,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA {C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Timer.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:46:23 on Sep 30,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA" C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Timer.sv 
+# -- Compiling module Timer
+# 
+# Top level modules:
+# 	Timer
+# End time: 21:46:23 on Sep 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA {C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Full_Timer.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:46:23 on Sep 30,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA" C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Full_Timer.sv 
+# -- Compiling module Full_Timer
+# 
+# Top level modules:
+# 	Full_Timer
+# End time: 21:46:23 on Sep 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA {C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/BCD_Visualizer.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:46:23 on Sep 30,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA" C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/BCD_Visualizer.sv 
+# -- Compiling module BCD_Visualizer
+# 
+# Top level modules:
+# 	BCD_Visualizer
+# End time: 21:46:23 on Sep 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA {C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/gameOverScreen.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:46:23 on Sep 30,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA" C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/gameOverScreen.sv 
+# -- Compiling module gameOverScreen
+# 
+# Top level modules:
+# 	gameOverScreen
+# End time: 21:46:23 on Sep 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA {C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:46:23 on Sep 30,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA" C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe_tb.sv 
+# -- Compiling module tic_tac_toe_fsm_tb
+# 
+# Top level modules:
+# 	tic_tac_toe_fsm_tb
+# End time: 21:46:23 on Sep 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tic_tac_toe_fsm_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tic_tac_toe_fsm_tb 
+# Start time: 21:46:23 on Sep 30,2024
+# Loading sv_std.std
+# Loading work.tic_tac_toe_fsm_tb
+# Loading work.tic_tac_toe_fsm
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Transición a TABLERO. Estado esperado: TABLERO
+# Estado actual: 0001, Variables: T=1, PLAYER_1=0, PLAYER_2=0, finished=0, matrix_complete=0
+# Estado correcto: 0001
+# Jugador 1 ha jugado. Estado esperado: TURNO_P1
+# Estado actual: 0010, Variables: T=1, PLAYER_1=0, PLAYER_2=0, finished=0, matrix_complete=0
+# Estado correcto: 0010
+# Finalizando turno de Jugador 1. Estado esperado: TURNO_P2
+# Estado actual: 0011, Variables: T=1, PLAYER_1=0, PLAYER_2=0, finished=0, matrix_complete=0
+# Estado correcto: 0011
+# Jugador 2 ha jugado. Estado esperado: TURNO_P2
+# Estado actual: 0010, Variables: T=1, PLAYER_1=0, PLAYER_2=0, finished=0, matrix_complete=0
+# Cambio de Estado realizado, esperado: 0011, obtenido: 0010
+# Finalizando turno de Jugador 2. Estado esperado: CHECK_WIN
+# Estado actual: 0011, Variables: T=1, PLAYER_1=0, PLAYER_2=0, finished=0, matrix_complete=0
+# Cambio de Estado realizado, esperado: 0100, obtenido: 0011
+# Volviendo a TURNO_P1. Estado esperado: TURNO_P1
+# Estado actual: 0010, Variables: T=1, PLAYER_1=0, PLAYER_2=0, finished=0, matrix_complete=0
+# Estado correcto: 0010
+# Juego completado. Estado esperado: GAME_OVER
+# Estado actual: 0010, Variables: T=1, PLAYER_1=0, PLAYER_2=0, finished=0, matrix_complete=1
+# Cambio de Estado realizado, esperado: 0101, obtenido: 0010
+# Reiniciando el juego. Estado esperado: P_INICIO
+# Estado actual: 0010, Variables: T=1, PLAYER_1=0, PLAYER_2=0, finished=0, matrix_complete=1
+# Cambio de Estado realizado, esperado: 0000, obtenido: 0010
+# Testbench Finalizado
+# ** Note: $finish    : C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe_tb.sv(117)
+#    Time: 200 ps  Iteration: 0  Instance: /tic_tac_toe_fsm_tb
+# 1
+# Break in Module tic_tac_toe_fsm_tb at C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe_tb.sv line 117
+# End time: 21:46:47 on Sep 30,2024, Elapsed time: 0:00:24
+# Errors: 0, Warnings: 0

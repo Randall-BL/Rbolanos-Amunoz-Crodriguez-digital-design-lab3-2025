@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at toplevel_tic_tac_toe.sv(7): object "B" differs only in case from object "b" in the same scope File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv Line: 7
+Info (10281): Verilog HDL Declaration information at SPI_main.sv(9): object "start" differs only in case from object "START" in the same scope File: C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/SPI_main.sv Line: 9
