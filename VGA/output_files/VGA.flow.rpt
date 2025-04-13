@@ -1,6 +1,6 @@
 Flow report for VGA
-Tue Oct 01 09:53:32 2024
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Sat Apr 12 15:24:36 2025
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
 ---------------------
@@ -21,7 +21,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2022  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -38,29 +38,29 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Oct 01 09:53:32 2024       ;
-; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                   ; VGA                                         ;
-; Top-level Entity Name           ; toplevel_tic_tac_toe                        ;
-; Family                          ; Cyclone V                                   ;
-; Device                          ; 5CSXFC6D6F31C6                              ;
-; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 581 / 41,910 ( 1 % )                        ;
-; Total registers                 ; 145                                         ;
-; Total pins                      ; 65 / 499 ( 13 % )                           ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
-; Total DSP Blocks                ; 37 / 112 ( 33 % )                           ;
-; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                               ;
-; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                               ;
-; Total HSSI TX PCSs              ; 0 / 9 ( 0 % )                               ;
-; Total HSSI PMA TX Serializers   ; 0 / 9 ( 0 % )                               ;
-; Total PLLs                      ; 0 / 15 ( 0 % )                              ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
-+---------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++---------------------------------+------------------------------------------------+
+; Flow Status                     ; Successful - Sat Apr 12 15:24:36 2025          ;
+; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                   ; VGA                                            ;
+; Top-level Entity Name           ; toplevel_tic_tac_toe                           ;
+; Family                          ; Cyclone V                                      ;
+; Device                          ; 5CSXFC6D6F31C6                                 ;
+; Timing Models                   ; Final                                          ;
+; Logic utilization (in ALMs)     ; 579 / 41,910 ( 1 % )                           ;
+; Total registers                 ; 137                                            ;
+; Total pins                      ; 65 / 499 ( 13 % )                              ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                          ;
+; Total DSP Blocks                ; 37 / 112 ( 33 % )                              ;
+; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                                  ;
+; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                                  ;
+; Total HSSI TX PCSs              ; 0 / 9 ( 0 % )                                  ;
+; Total HSSI PMA TX Serializers   ; 0 / 9 ( 0 % )                                  ;
+; Total PLLs                      ; 0 / 15 ( 0 % )                                 ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                                  ;
++---------------------------------+------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/01/2024 09:51:34 ;
+; Start date & time ; 04/12/2025 15:21:25 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; VGA                 ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+----------------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name          ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+----------------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 171701902235286.172779789420036        ; --            ; --                   ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 66504332775040.174449288536080         ; --            ; --                   ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --                   ; tic_tac_toe_fsm_tb                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --                   ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --                   ; eda_board_design_boundary_scan    ;
@@ -87,7 +87,7 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --                   ; eda_board_design_symbol           ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tic_tac_toe_fsm_tb                     ; --            ; --                   ; eda_simulation                    ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --            ; --                   ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --                   ; --                                ;
+; EDA_SIMULATION_TOOL                  ; Questa Intel FPGA (SystemVerilog)      ; <None>        ; --                   ; --                                ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --                   ; eda_simulation                    ;
 ; EDA_TEST_BENCH_FILE                  ; toplevel_tic_tac_toe_tb.sv             ; --            ; --                   ; tic_tac_toe_fsm_tb                ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; tic_tac_toe_fsm_tb                     ; --            ; --                   ; tic_tac_toe_fsm_tb                ;
@@ -110,12 +110,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4823 MB             ; 00:00:19                           ;
-; Fitter               ; 00:01:21     ; 1.0                     ; 6222 MB             ; 00:01:28                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4858 MB             ; 00:00:05                           ;
-; Timing Analyzer      ; 00:00:10     ; 1.4                     ; 5148 MB             ; 00:00:09                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4750 MB             ; 00:00:01                           ;
-; Total                ; 00:01:52     ; --                      ; --                  ; 00:02:02                           ;
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4943 MB             ; 00:00:19                           ;
+; Fitter               ; 00:02:44     ; 1.0                     ; 7990 MB             ; 00:15:57                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 5253 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:06     ; 2.4                     ; 5453 MB             ; 00:00:09                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4775 MB             ; 00:00:01                           ;
+; Total                ; 00:03:06     ; --                      ; --                  ; 00:16:31                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -124,11 +124,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; LAPTOP-9GR3L31S  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; LAPTOP-9GR3L31S  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; LAPTOP-9GR3L31S  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; LAPTOP-9GR3L31S  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; LAPTOP-9GR3L31S  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; ChrisMachine     ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; ChrisMachine     ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; ChrisMachine     ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; ChrisMachine     ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; ChrisMachine     ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
