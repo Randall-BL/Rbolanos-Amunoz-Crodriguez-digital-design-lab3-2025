@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSXFC6D6F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY toplevel_tic_tac_toe
+set_global_assignment -name TOP_LEVEL_ENTITY toplevel_connect4
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:55:14  SEPTEMBER 21, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.0 Lite Edition"
@@ -52,9 +52,6 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-set_global_assignment -name SYSTEMVERILOG_FILE vgaController.sv
-set_global_assignment -name SYSTEMVERILOG_FILE pll.sv
-set_global_assignment -name SYSTEMVERILOG_FILE videoGen.sv
 set_location_assignment PIN_AK29 -to r[0]
 set_location_assignment PIN_AK28 -to r[1]
 set_location_assignment PIN_AK27 -to r[2]
@@ -68,7 +65,6 @@ set_location_assignment PIN_AK26 -to g[0]
 set_location_assignment PIN_AJ25 -to g[1]
 set_location_assignment PIN_AH25 -to g[2]
 set_location_assignment PIN_AK24 -to g[3]
-set_location_assignment PIN_AJ24 -to g[4]
 set_location_assignment PIN_AH24 -to g[5]
 set_location_assignment PIN_AK23 -to g[6]
 set_location_assignment PIN_AH23 -to g[7]
@@ -76,7 +72,6 @@ set_location_assignment PIN_AK22 -to blank_b
 set_location_assignment PIN_AJ21 -to b[0]
 set_location_assignment PIN_AJ20 -to b[1]
 set_location_assignment PIN_AH20 -to b[2]
-set_location_assignment PIN_AJ19 -to b[3]
 set_location_assignment PIN_AH19 -to b[4]
 set_location_assignment PIN_AJ17 -to b[5]
 set_location_assignment PIN_AJ16 -to b[6]
@@ -84,25 +79,8 @@ set_location_assignment PIN_AK16 -to b[7]
 set_location_assignment PIN_AJ22 -to sync_b
 set_location_assignment PIN_AK18 -to vsync
 set_location_assignment PIN_AK21 -to vgaclk
-set_global_assignment -name SYSTEMVERILOG_FILE tic_tac_toe_fsm.sv
-set_global_assignment -name SYSTEMVERILOG_FILE toplevel_tic_tac_toe.sv
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name SYSTEMVERILOG_FILE startScreen.sv
-set_global_assignment -name SYSTEMVERILOG_FILE matrixTablero.sv
-set_global_assignment -name SYSTEMVERILOG_FILE matrixTableroControl.sv
-set_global_assignment -name SYSTEMVERILOG_FILE toplevel_tic_tac_toe_tb.sv
-set_global_assignment -name SYSTEMVERILOG_FILE Button_debonce.sv
-set_location_assignment PIN_AB28 -to A
-set_location_assignment PIN_AK4 -to I
-set_location_assignment PIN_Y27 -to T
-set_location_assignment PIN_AJ4 -to W
 set_location_assignment PIN_AF14 -to clk
 set_location_assignment PIN_AA30 -to rst
-set_global_assignment -name SYSTEMVERILOG_FILE Timer.sv
-set_global_assignment -name SYSTEMVERILOG_FILE Full_Timer.sv
-set_global_assignment -name SYSTEMVERILOG_FILE BCD_Visualizer.sv
 set_location_assignment PIN_W17 -to segments[0]
 set_location_assignment PIN_V18 -to segments[1]
 set_location_assignment PIN_AG17 -to segments[2]
@@ -110,14 +88,6 @@ set_location_assignment PIN_AG16 -to segments[3]
 set_location_assignment PIN_AH17 -to segments[4]
 set_location_assignment PIN_AG18 -to segments[5]
 set_location_assignment PIN_AH18 -to segments[6]
-set_location_assignment PIN_V25 -to PLAYER_1
-set_location_assignment PIN_AC28 -to PLAYER_2
-set_location_assignment PIN_AA24 -to led_p1
-set_location_assignment PIN_AB23 -to led_p2
-set_location_assignment PIN_AC29 -to NEXT
-set_location_assignment PIN_AD30 -to TEST
-set_global_assignment -name SYSTEMVERILOG_FILE gameOverScreen.sv
-set_location_assignment PIN_AA14 -to B
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
@@ -128,5 +98,33 @@ set_global_assignment -name EDA_TEST_BENCH_NAME tic_tac_toe_fsm_tb -section_id e
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tic_tac_toe_fsm_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tic_tac_toe_fsm_tb -section_id tic_tac_toe_fsm_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE toplevel_tic_tac_toe_tb.sv -section_id tic_tac_toe_fsm_tb
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE winner_detection.sv
+set_global_assignment -name SYSTEMVERILOG_FILE videoGen.sv
+set_global_assignment -name SYSTEMVERILOG_FILE vgaController.sv
+set_global_assignment -name SYSTEMVERILOG_FILE toplevel_tic_tac_toe_tb.sv
+set_global_assignment -name SYSTEMVERILOG_FILE toplevel_connect4.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Timer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE startScreen.sv
 set_global_assignment -name SYSTEMVERILOG_FILE SPI_main.sv
+set_global_assignment -name SYSTEMVERILOG_FILE random_selector.sv
+set_global_assignment -name SYSTEMVERILOG_FILE pll.sv
+set_global_assignment -name SYSTEMVERILOG_FILE matrixTableroControl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE matrixTablero.sv
+set_global_assignment -name SYSTEMVERILOG_FILE gameOverScreen.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Full_Timer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE connect4_fsm.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Button_debonce.sv
+set_global_assignment -name SYSTEMVERILOG_FILE BCD_Visualizer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE arduino_interface.sv
+set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2005
+set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
+set_location_assignment PIN_AA15 -to col_right
+set_location_assignment PIN_AJ4 -to col_left
+set_location_assignment PIN_AK4 -to confirm
+set_location_assignment PIN_AE16 -to p2_led
+set_location_assignment PIN_AC29 -to player1_start
+set_location_assignment PIN_AD30 -to player2_start
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

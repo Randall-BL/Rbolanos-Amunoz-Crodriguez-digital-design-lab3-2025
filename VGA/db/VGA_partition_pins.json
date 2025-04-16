@@ -4,18 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "estado[0]",
-					"strict" : false
-				},
-				{
-					"name" : "estado[1]",
-					"strict" : false
-				},
-				{
-					"name" : "estado[2]",
-					"strict" : false
-				},
-				{
 					"name" : "vgaclk",
 					"strict" : false
 				},
@@ -132,46 +120,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "matrix_out_MEF[0]",
-					"strict" : false
-				},
-				{
-					"name" : "matrix_out_MEF[1]",
-					"strict" : false
-				},
-				{
-					"name" : "matrix_out_MEF[2]",
-					"strict" : false
-				},
-				{
-					"name" : "matrix_out_MEF[3]",
-					"strict" : false
-				},
-				{
-					"name" : "matrix_out_MEF[4]",
-					"strict" : false
-				},
-				{
-					"name" : "matrix_out_MEF[5]",
-					"strict" : false
-				},
-				{
-					"name" : "matrix_out_MEF[6]",
-					"strict" : false
-				},
-				{
-					"name" : "matrix_out_MEF[7]",
-					"strict" : false
-				},
-				{
-					"name" : "matrix_out_MEF[8]",
-					"strict" : false
-				},
-				{
-					"name" : "load",
-					"strict" : false
-				},
-				{
 					"name" : "segments[0]",
 					"strict" : false
 				},
@@ -200,19 +148,31 @@
 					"strict" : false
 				},
 				{
-					"name" : "led_p1",
+					"name" : "p1_led",
 					"strict" : false
 				},
 				{
-					"name" : "led_p2",
+					"name" : "p2_led",
 					"strict" : false
 				},
 				{
-					"name" : "reset_timer",
+					"name" : "game_over_led",
 					"strict" : false
 				},
 				{
-					"name" : "reset_done",
+					"name" : "estado[0]",
+					"strict" : false
+				},
+				{
+					"name" : "estado[1]",
+					"strict" : false
+				},
+				{
+					"name" : "estado[2]",
+					"strict" : false
+				},
+				{
+					"name" : "estado[3]",
 					"strict" : false
 				},
 				{
@@ -224,35 +184,27 @@
 					"strict" : false
 				},
 				{
-					"name" : "I",
+					"name" : "confirm",
 					"strict" : false
 				},
 				{
-					"name" : "B",
+					"name" : "player2_start",
 					"strict" : false
 				},
 				{
-					"name" : "NEXT",
+					"name" : "player1_start",
 					"strict" : false
 				},
 				{
-					"name" : "PLAYER_1",
+					"name" : "col_left",
 					"strict" : false
 				},
 				{
-					"name" : "PLAYER_2",
+					"name" : "col_right",
 					"strict" : false
 				},
 				{
-					"name" : "A",
-					"strict" : false
-				},
-				{
-					"name" : "T",
-					"strict" : false
-				},
-				{
-					"name" : "W",
+					"name" : "arduino_rx",
 					"strict" : false
 				}
 			]

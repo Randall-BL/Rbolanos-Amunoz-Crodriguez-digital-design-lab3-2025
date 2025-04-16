@@ -1,0 +1,152 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Modulo encargado de tener la declaracion y manejo de estados (Definicion de la FSM)
+// Ahora para Connect 4
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+module connect4_fsm(
+    input logic clk, rst,
+    input logic player1_start, player2_start, // Selección de jugador inicial
+    input logic move_valid,    // Movimiento válido realizado
+    input logic arduino_ready, // Arduino listo para jugar
+    input logic winner_found,  // Señal de que hay un ganador
+    input logic board_full,    // Tablero lleno (empate)
+    input logic timer_done,    // Temporizador de turno terminado
+    
+    output logic reset_timer,  // Resetear temporizador
+    output logic p1_turn,      // Turno del jugador 1 (FPGA)
+    output logic p2_turn,      // Turno del jugador 2 (Arduino)
+    output logic game_over,    // Juego terminado
+    output logic [3:0] estado, // Estado actual
+    output logic random_move,  // Solicitar movimiento aleatorio
+    output logic [2:0] player  // Jugador actual (para módulo de matriz)
+);
+
+    // Definición de los estados
+    typedef enum logic [3:0] {
+        P_INICIO = 4'b0000,   // Pantalla Inicial
+        SELECCION_JUGADOR = 4'b0001, // Selección de jugador inicial
+        TURNO_P1 = 4'b0010,   // Turno del jugador 1 (FPGA)
+        ESPERANDO_P1 = 4'b0011, // Esperando confirmación de jugador 1
+        TURNO_P2 = 4'b0100,   // Turno del jugador 2 (Arduino)
+        ESPERANDO_P2 = 4'b0101, // Esperando movimiento de Arduino
+        FICHA_CAYENDO = 4'b0110, // Animación de ficha cayendo
+        VERIFICAR_GANADOR = 4'b0111, // Revisión del ganador
+        GAME_OVER = 4'b1000   // Juego terminado
+    } state_t;
+
+    state_t current_state, next_state;
+
+    // Registro para guardar el jugador inicial
+    logic first_player;
+
+    // Actualización de estado
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
+            current_state <= P_INICIO;
+            first_player <= 1'b0;
+        end else begin
+            current_state <= next_state;
+            
+            // Guardar jugador inicial
+            if (current_state == SELECCION_JUGADOR) begin
+                if (player1_start) first_player <= 1'b0;
+                if (player2_start) first_player <= 1'b1;
+            end
+        end
+    end
+
+    // Lógica de transición de estados
+    always_comb begin
+        next_state = current_state;
+        
+        case (current_state)
+            P_INICIO: 
+                next_state = SELECCION_JUGADOR;
+                
+            SELECCION_JUGADOR:
+                if (player1_start) 
+                    next_state = TURNO_P1;
+                else if (player2_start)
+                    next_state = TURNO_P2;
+                    
+            TURNO_P1:
+                next_state = ESPERANDO_P1;
+                
+            ESPERANDO_P1:
+                if (move_valid)
+                    next_state = FICHA_CAYENDO;
+                else if (timer_done)
+                    next_state = FICHA_CAYENDO; // Movimiento aleatorio
+                    
+            TURNO_P2:
+                next_state = ESPERANDO_P2;
+                
+            ESPERANDO_P2:
+                if (arduino_ready)
+                    next_state = FICHA_CAYENDO;
+                else if (timer_done)
+                    next_state = FICHA_CAYENDO; // Movimiento aleatorio
+                    
+            FICHA_CAYENDO:
+                next_state = VERIFICAR_GANADOR;
+                
+            VERIFICAR_GANADOR:
+                if (winner_found || board_full)
+                    next_state = GAME_OVER;
+                else if (first_player)
+                    next_state = TURNO_P1;
+                else
+                    next_state = TURNO_P2;
+                    
+            GAME_OVER:
+                if (rst)
+                    next_state = P_INICIO;
+        endcase
+    end
+
+    // Lógica de salida
+    always_comb begin
+        // Valores por defecto
+        reset_timer = 1'b0;
+        p1_turn = 1'b0;
+        p2_turn = 1'b0;
+        game_over = 1'b0;
+        random_move = 1'b0;
+        player = 2'b00;
+        
+        case (current_state)
+            TURNO_P1, ESPERANDO_P1: begin
+                p1_turn = 1'b1;
+                player = 2'b01; // Jugador 1
+                if (current_state == TURNO_P1)
+                    reset_timer = 1'b1;
+                if (timer_done)
+                    random_move = 1'b1;
+            end
+            
+            TURNO_P2, ESPERANDO_P2: begin
+                p2_turn = 1'b1;
+                player = 2'b10; // Jugador 2
+                if (current_state == TURNO_P2)
+                    reset_timer = 1'b1;
+                if (timer_done)
+                    random_move = 1'b1;
+            end
+            
+            GAME_OVER: begin
+                game_over = 1'b1;
+            end
+            
+            default: ;
+        endcase
+    end
+
+    // Asignar estado a la salida
+    assign estado = current_state;
+	 
+initial begin
+    current_state = state_t'(4'b0010); // casteo explícito al tipo enum
+end
+
+
+endmodule
