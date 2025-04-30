@@ -1,12 +1,12 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Modulo que dibuja la pantalla de Inicio (START)
+// Módulo que dibuja la pantalla de Inicio (START) (Versión corregida)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 module startScreen(
     input logic [9:0] x, y,
+    input logic visible,
     output logic [7:0] r, g, b
-); 
+);
 
 logic letter_S, letter_T1, letter_A, letter_R, letter_T2;
 
@@ -27,7 +27,6 @@ initial begin
     R_left = A_left + letter_width + 10;
     T2_left = R_left + letter_width + 10;
 
-    // Asignar top y bottom para las letras
     letter_top = 10'd100;
     letter_bottom = letter_top + letter_height;
 end
@@ -45,50 +44,41 @@ end
 always_comb begin
     // Letra S
     letter_S = ((x >= S_left && x <= S_right) && (y >= letter_top && y <= letter_bottom)) &&
-               (
-                (y == letter_top) || // Borde superior de la S
-                (y == letter_bottom) || // Borde inferior de la S
-                (y == letter_top + 40) || // Línea central
-                (x == S_left && y <= letter_top + 40) || // Borde izquierdo en la parte superior
-                (x == S_right && y >= letter_top + 40) // Borde derecho en la parte inferior
-               );
+               ((y == letter_top) || (y == letter_bottom) || (y == letter_top + 40) ||
+                (x == S_left && y <= letter_top + 40) ||
+                (x == S_right && y >= letter_top + 40));
 
     // Primera letra T
     letter_T1 = ((x >= T1_left && x <= T1_right) && (y >= letter_top && y <= letter_bottom)) &&
-               (
-                (y == letter_top) || // Borde superior de la T
-                (x == T1_left + letter_width / 2) // Línea vertical en el centro de la T
-               );
+                ((y == letter_top) || (x == T1_left + letter_width / 2));
 
     // Letra A
     letter_A = ((x >= A_left && x <= A_right) && (y >= letter_top && y <= letter_bottom)) &&
-               (
-                (y == letter_top) || // Borde superior de la A
-                (x == A_left || x == A_right) || // Bordes laterales de la A
-                (y == letter_top + 40 && x >= A_left + 10 && x <= A_right - 10) // Línea horizontal en el centro
-               );
+               ((y == letter_top) || (x == A_left || x == A_right) ||
+                (y == letter_top + 40 && x >= A_left + 10 && x <= A_right - 10));
 
     // Letra R
     letter_R = ((x >= R_left && x <= R_right) && (y >= letter_top && y <= letter_bottom)) &&
-               (
-                (y == letter_top) || // Borde superior de la R
-                (x == R_left) || // Borde izquierdo de la R
-                (y == letter_top + 40 && x <= R_right) || // Línea horizontal en el centro
-                (x == R_right && y >= letter_top + 40) // Curva en la parte inferior derecha
-               );
+               ((y == letter_top) || (x == R_left) ||
+                (y == letter_top + 40 && x <= R_right) ||
+                (x == R_right && y >= letter_top + 40));
 
     // Segunda letra T
     letter_T2 = ((x >= T2_left && x <= T2_right) && (y >= letter_top && y <= letter_bottom)) &&
-               (
-                (y == letter_top) || // Borde superior de la T
-                (x == T2_left + letter_width / 2) // Línea vertical en el centro de la T
-               );
+                ((y == letter_top) || (x == T2_left + letter_width / 2));
 end
 
-// Asignar el color verde a las letras
-assign r = (letter_S || letter_T1 || letter_A || letter_R || letter_T2) ? 8'h00 : 8'h00; // Sin rojo
-assign g = (letter_S || letter_T1 || letter_A || letter_R || letter_T2) ? 8'hFF : 8'h00; // Verde para "START"
-assign b = (letter_S || letter_T1 || letter_A || letter_R || letter_T2) ? 8'h00 : 8'h00; // Sin azul
+// Asignar color SOLO si visible == 1
+always_comb begin
+    if (visible) begin
+        r = (letter_S || letter_T1 || letter_A || letter_R || letter_T2) ? 8'h00 : 8'h00; // Sin rojo
+        g = (letter_S || letter_T1 || letter_A || letter_R || letter_T2) ? 8'hFF : 8'h00; // Verde
+        b = (letter_S || letter_T1 || letter_A || letter_R || letter_T2) ? 8'h00 : 8'h00; // Sin azul
+    end else begin
+        r = 8'h00;
+        g = 8'h00;
+        b = 8'h00;
+    end
+end
 
 endmodule
-

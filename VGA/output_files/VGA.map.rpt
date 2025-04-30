@@ -1,5 +1,5 @@
-Analysis & Synthesis report for VGA
-Tue Apr 15 18:46:15 2025
+Analysis & Elaboration report for VGA
+Tue Apr 29 23:25:23 2025
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -7,39 +7,22 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis DSP Block Usage Summary
-  9. State Machine - |toplevel_connect4|arduino_interface:arduino|next_state
- 10. State Machine - |toplevel_connect4|arduino_interface:arduino|current_state
- 11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Parameter Settings for User Entity Instance: vgaController:vgaCont
- 17. Parameter Settings for Inferred Entity Instance: videoGen:vgaGen|lpm_divide:Div1
- 18. Parameter Settings for Inferred Entity Instance: videoGen:vgaGen|lpm_divide:Div0
- 19. Parameter Settings for Inferred Entity Instance: random_selector:randomSel|lpm_divide:Mod1
- 20. Parameter Settings for Inferred Entity Instance: random_selector:randomSel|lpm_divide:Mod0
- 21. Parameter Settings for Inferred Entity Instance: random_selector:randomSel|lpm_divide:Mod2
- 22. Parameter Settings for Inferred Entity Instance: random_selector:randomSel|lpm_divide:Mod4
- 23. Parameter Settings for Inferred Entity Instance: random_selector:randomSel|lpm_divide:Mod3
- 24. Parameter Settings for Inferred Entity Instance: random_selector:randomSel|lpm_divide:Mod6
- 25. Parameter Settings for Inferred Entity Instance: random_selector:randomSel|lpm_divide:Mod5
- 26. Port Connectivity Checks: "arduino_interface:arduino"
- 27. Port Connectivity Checks: "winner_detection:winnerDetect"
- 28. Port Connectivity Checks: "matrixTablero:matrixReg"
- 29. Port Connectivity Checks: "matrixTableroControl:matrixCtrl"
- 30. Port Connectivity Checks: "connect4_fsm:fsm"
- 31. Post-Synthesis Netlist Statistics for Top Partition
- 32. Elapsed Time Per Partition
- 33. Analysis & Synthesis Messages
- 34. Analysis & Synthesis Suppressed Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: Button_debounce:debounce_left
+  5. Parameter Settings for User Entity Instance: Button_debounce:debounce_right
+  6. Parameter Settings for User Entity Instance: Button_debounce:debounce_confirm
+  7. Parameter Settings for User Entity Instance: Button_debounce:debounce_start
+  8. Parameter Settings for User Entity Instance: Button_debounce:debounce_p1
+  9. Parameter Settings for User Entity Instance: Button_debounce:debounce_p2
+ 10. Parameter Settings for User Entity Instance: vgaController:vgaCont
+ 11. Analysis & Elaboration Settings
+ 12. Port Connectivity Checks: "arduino_interface:arduino"
+ 13. Port Connectivity Checks: "winner_detection:winnerDetect"
+ 14. Port Connectivity Checks: "connect4_fsm:fsm"
+ 15. Port Connectivity Checks: "Button_debounce:debounce_start"
+ 16. Analysis & Elaboration Messages
+ 17. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -63,31 +46,127 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Apr 15 18:46:15 2025          ;
-; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
-; Revision Name                   ; VGA                                            ;
-; Top-level Entity Name           ; toplevel_connect4                              ;
-; Family                          ; Cyclone V                                      ;
-; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 140                                            ;
-; Total pins                      ; 51                                             ;
-; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 0                                              ;
-; Total DSP Blocks                ; 3                                              ;
-; Total HSSI RX PCSs              ; 0                                              ;
-; Total HSSI PMA RX Deserializers ; 0                                              ;
-; Total HSSI TX PCSs              ; 0                                              ;
-; Total HSSI PMA TX Serializers   ; 0                                              ;
-; Total PLLs                      ; 0                                              ;
-; Total DLLs                      ; 0                                              ;
-+---------------------------------+------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                 ;
++-------------------------------+------------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Tue Apr 29 23:25:23 2025          ;
+; Quartus Prime Version         ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                 ; VGA                                            ;
+; Top-level Entity Name         ; toplevel_connect4                              ;
+; Family                        ; Cyclone V                                      ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                      ;
+; Total registers               ; N/A until Partition Merge                      ;
+; Total pins                    ; N/A until Partition Merge                      ;
+; Total virtual pins            ; N/A until Partition Merge                      ;
+; Total block memory bits       ; N/A until Partition Merge                      ;
+; Total PLLs                    ; N/A until Partition Merge                      ;
+; Total DLLs                    ; N/A until Partition Merge                      ;
++-------------------------------+------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Button_debounce:debounce_left ;
++----------------+----------+------------------------------------------------+
+; Parameter Name ; Value    ; Type                                           ;
++----------------+----------+------------------------------------------------+
+; CLK_FREQ       ; 50000000 ; Signed Integer                                 ;
+; STABLE_TIME_MS ; 10       ; Signed Integer                                 ;
++----------------+----------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Button_debounce:debounce_right ;
++----------------+----------+-------------------------------------------------+
+; Parameter Name ; Value    ; Type                                            ;
++----------------+----------+-------------------------------------------------+
+; CLK_FREQ       ; 50000000 ; Signed Integer                                  ;
+; STABLE_TIME_MS ; 10       ; Signed Integer                                  ;
++----------------+----------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Button_debounce:debounce_confirm ;
++----------------+----------+---------------------------------------------------+
+; Parameter Name ; Value    ; Type                                              ;
++----------------+----------+---------------------------------------------------+
+; CLK_FREQ       ; 50000000 ; Signed Integer                                    ;
+; STABLE_TIME_MS ; 10       ; Signed Integer                                    ;
++----------------+----------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Button_debounce:debounce_start ;
++----------------+----------+-------------------------------------------------+
+; Parameter Name ; Value    ; Type                                            ;
++----------------+----------+-------------------------------------------------+
+; CLK_FREQ       ; 50000000 ; Signed Integer                                  ;
+; STABLE_TIME_MS ; 10       ; Signed Integer                                  ;
++----------------+----------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Button_debounce:debounce_p1 ;
++----------------+----------+----------------------------------------------+
+; Parameter Name ; Value    ; Type                                         ;
++----------------+----------+----------------------------------------------+
+; CLK_FREQ       ; 50000000 ; Signed Integer                               ;
+; STABLE_TIME_MS ; 10       ; Signed Integer                               ;
++----------------+----------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Button_debounce:debounce_p2 ;
++----------------+----------+----------------------------------------------+
+; Parameter Name ; Value    ; Type                                         ;
++----------------+----------+----------------------------------------------+
+; CLK_FREQ       ; 50000000 ; Signed Integer                               ;
+; STABLE_TIME_MS ; 10       ; Signed Integer                               ;
++----------------+----------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vgaController:vgaCont ;
++----------------+------------+--------------------------------------+
+; Parameter Name ; Value      ; Type                                 ;
++----------------+------------+--------------------------------------+
+; HACTIVE        ; 1010000000 ; Unsigned Binary                      ;
+; HFP            ; 0000010000 ; Unsigned Binary                      ;
+; HSYN           ; 0001100000 ; Unsigned Binary                      ;
+; HBP            ; 0000110000 ; Unsigned Binary                      ;
+; HMAX           ; 1100100000 ; Unsigned Binary                      ;
+; VBP            ; 0000100001 ; Unsigned Binary                      ;
+; VACTIVE        ; 0111100000 ; Unsigned Binary                      ;
+; VFP            ; 0000001010 ; Unsigned Binary                      ;
+; VSYN           ; 0000000010 ; Unsigned Binary                      ;
+; VMAX           ; 1000001101 ; Unsigned Binary                      ;
++----------------+------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -174,512 +253,6 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 16          ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 16          ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.0%      ;
-+----------------------------+-------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                              ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                          ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
-; winner_detection.sv              ; yes             ; User SystemVerilog HDL File  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/winner_detection.sv        ;         ;
-; videoGen.sv                      ; yes             ; User SystemVerilog HDL File  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/videoGen.sv                ;         ;
-; vgaController.sv                 ; yes             ; User SystemVerilog HDL File  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/vgaController.sv           ;         ;
-; toplevel_connect4.sv             ; yes             ; User SystemVerilog HDL File  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/toplevel_connect4.sv       ;         ;
-; random_selector.sv               ; yes             ; User SystemVerilog HDL File  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/random_selector.sv         ;         ;
-; pll.sv                           ; yes             ; User SystemVerilog HDL File  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/pll.sv                     ;         ;
-; matrixTableroControl.sv          ; yes             ; User SystemVerilog HDL File  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/matrixTableroControl.sv    ;         ;
-; matrixTablero.sv                 ; yes             ; User SystemVerilog HDL File  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/matrixTablero.sv           ;         ;
-; Full_Timer.sv                    ; yes             ; User SystemVerilog HDL File  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/Full_Timer.sv              ;         ;
-; connect4_fsm.sv                  ; yes             ; User SystemVerilog HDL File  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/connect4_fsm.sv            ;         ;
-; BCD_Visualizer.sv                ; yes             ; User SystemVerilog HDL File  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/BCD_Visualizer.sv          ;         ;
-; arduino_interface.sv             ; yes             ; User SystemVerilog HDL File  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/arduino_interface.sv       ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_divide.tdf              ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/abs_divider.inc             ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/sign_div_unsign.inc         ;         ;
-; aglobal221.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc              ;         ;
-; db/lpm_divide_hbm.tdf            ; yes             ; Auto-Generated Megafunction  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/lpm_divide_hbm.tdf      ;         ;
-; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/sign_div_unsign_nlh.tdf ;         ;
-; db/alt_u_div_kve.tdf             ; yes             ; Auto-Generated Megafunction  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/alt_u_div_kve.tdf       ;         ;
-; db/lpm_divide_32m.tdf            ; yes             ; Auto-Generated Megafunction  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/lpm_divide_32m.tdf      ;         ;
-; db/sign_div_unsign_6kh.tdf       ; yes             ; Auto-Generated Megafunction  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/sign_div_unsign_6kh.tdf ;         ;
-; db/alt_u_div_ise.tdf             ; yes             ; Auto-Generated Megafunction  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/alt_u_div_ise.tdf       ;         ;
-; db/lpm_divide_22m.tdf            ; yes             ; Auto-Generated Megafunction  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/lpm_divide_22m.tdf      ;         ;
-; db/sign_div_unsign_5kh.tdf       ; yes             ; Auto-Generated Megafunction  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/sign_div_unsign_5kh.tdf ;         ;
-; db/alt_u_div_gse.tdf             ; yes             ; Auto-Generated Megafunction  ; E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/alt_u_div_gse.tdf       ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 390       ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 671       ;
-;     -- 7 input functions                    ; 14        ;
-;     -- 6 input functions                    ; 90        ;
-;     -- 5 input functions                    ; 83        ;
-;     -- 4 input functions                    ; 90        ;
-;     -- <=3 input functions                  ; 394       ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 140       ;
-;                                             ;           ;
-; I/O pins                                    ; 51        ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 3         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 120       ;
-; Total fan-out                               ; 2866      ;
-; Average fan-out                             ; 3.13      ;
-+---------------------------------------------+-----------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                     ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                          ; Entity Name          ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |toplevel_connect4                        ; 671 (5)             ; 140 (0)                   ; 0                 ; 3          ; 51   ; 0            ; |toplevel_connect4                                                                                                                           ; toplevel_connect4    ; work         ;
-;    |BCD_Visualizer:segDisplay|            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|BCD_Visualizer:segDisplay                                                                                                 ; BCD_Visualizer       ; work         ;
-;    |Full_Timer:timer|                     ; 39 (39)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|Full_Timer:timer                                                                                                          ; Full_Timer           ; work         ;
-;    |arduino_interface:arduino|            ; 58 (58)             ; 41 (41)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|arduino_interface:arduino                                                                                                 ; arduino_interface    ; work         ;
-;    |connect4_fsm:fsm|                     ; 18 (18)             ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|connect4_fsm:fsm                                                                                                          ; connect4_fsm         ; work         ;
-;    |matrixTablero:matrixReg|              ; 42 (42)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|matrixTablero:matrixReg                                                                                                   ; matrixTablero        ; work         ;
-;    |matrixTableroControl:matrixCtrl|      ; 10 (10)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|matrixTableroControl:matrixCtrl                                                                                           ; matrixTableroControl ; work         ;
-;    |pll:vgapll|                           ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|pll:vgapll                                                                                                                ; pll                  ; work         ;
-;    |random_selector:randomSel|            ; 127 (48)            ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel                                                                                                 ; random_selector      ; work         ;
-;       |lpm_divide:Mod0|                   ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod0                                                                                 ; lpm_divide           ; work         ;
-;          |lpm_divide_22m:auto_generated|  ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod0|lpm_divide_22m:auto_generated                                                   ; lpm_divide_22m       ; work         ;
-;             |sign_div_unsign_5kh:divider| ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod0|lpm_divide_22m:auto_generated|sign_div_unsign_5kh:divider                       ; sign_div_unsign_5kh  ; work         ;
-;                |alt_u_div_gse:divider|    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod0|lpm_divide_22m:auto_generated|sign_div_unsign_5kh:divider|alt_u_div_gse:divider ; alt_u_div_gse        ; work         ;
-;       |lpm_divide:Mod1|                   ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod1                                                                                 ; lpm_divide           ; work         ;
-;          |lpm_divide_32m:auto_generated|  ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod1|lpm_divide_32m:auto_generated                                                   ; lpm_divide_32m       ; work         ;
-;             |sign_div_unsign_6kh:divider| ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod1|lpm_divide_32m:auto_generated|sign_div_unsign_6kh:divider                       ; sign_div_unsign_6kh  ; work         ;
-;                |alt_u_div_ise:divider|    ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod1|lpm_divide_32m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_ise:divider ; alt_u_div_ise        ; work         ;
-;       |lpm_divide:Mod2|                   ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod2                                                                                 ; lpm_divide           ; work         ;
-;          |lpm_divide_32m:auto_generated|  ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod2|lpm_divide_32m:auto_generated                                                   ; lpm_divide_32m       ; work         ;
-;             |sign_div_unsign_6kh:divider| ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod2|lpm_divide_32m:auto_generated|sign_div_unsign_6kh:divider                       ; sign_div_unsign_6kh  ; work         ;
-;                |alt_u_div_ise:divider|    ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod2|lpm_divide_32m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_ise:divider ; alt_u_div_ise        ; work         ;
-;       |lpm_divide:Mod3|                   ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod3                                                                                 ; lpm_divide           ; work         ;
-;          |lpm_divide_32m:auto_generated|  ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod3|lpm_divide_32m:auto_generated                                                   ; lpm_divide_32m       ; work         ;
-;             |sign_div_unsign_6kh:divider| ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod3|lpm_divide_32m:auto_generated|sign_div_unsign_6kh:divider                       ; sign_div_unsign_6kh  ; work         ;
-;                |alt_u_div_ise:divider|    ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod3|lpm_divide_32m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_ise:divider ; alt_u_div_ise        ; work         ;
-;       |lpm_divide:Mod4|                   ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod4                                                                                 ; lpm_divide           ; work         ;
-;          |lpm_divide_32m:auto_generated|  ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod4|lpm_divide_32m:auto_generated                                                   ; lpm_divide_32m       ; work         ;
-;             |sign_div_unsign_6kh:divider| ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod4|lpm_divide_32m:auto_generated|sign_div_unsign_6kh:divider                       ; sign_div_unsign_6kh  ; work         ;
-;                |alt_u_div_ise:divider|    ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod4|lpm_divide_32m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_ise:divider ; alt_u_div_ise        ; work         ;
-;       |lpm_divide:Mod5|                   ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod5                                                                                 ; lpm_divide           ; work         ;
-;          |lpm_divide_32m:auto_generated|  ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod5|lpm_divide_32m:auto_generated                                                   ; lpm_divide_32m       ; work         ;
-;             |sign_div_unsign_6kh:divider| ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod5|lpm_divide_32m:auto_generated|sign_div_unsign_6kh:divider                       ; sign_div_unsign_6kh  ; work         ;
-;                |alt_u_div_ise:divider|    ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod5|lpm_divide_32m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_ise:divider ; alt_u_div_ise        ; work         ;
-;       |lpm_divide:Mod6|                   ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod6                                                                                 ; lpm_divide           ; work         ;
-;          |lpm_divide_32m:auto_generated|  ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod6|lpm_divide_32m:auto_generated                                                   ; lpm_divide_32m       ; work         ;
-;             |sign_div_unsign_6kh:divider| ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod6|lpm_divide_32m:auto_generated|sign_div_unsign_6kh:divider                       ; sign_div_unsign_6kh  ; work         ;
-;                |alt_u_div_ise:divider|    ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|random_selector:randomSel|lpm_divide:Mod6|lpm_divide_32m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_ise:divider ; alt_u_div_ise        ; work         ;
-;    |vgaController:vgaCont|                ; 29 (29)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|vgaController:vgaCont                                                                                                     ; vgaController        ; work         ;
-;    |videoGen:vgaGen|                      ; 325 (163)           ; 0 (0)                     ; 0                 ; 3          ; 0    ; 0            ; |toplevel_connect4|videoGen:vgaGen                                                                                                           ; videoGen             ; work         ;
-;       |lpm_divide:Div0|                   ; 81 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|videoGen:vgaGen|lpm_divide:Div0                                                                                           ; lpm_divide           ; work         ;
-;          |lpm_divide_hbm:auto_generated|  ; 81 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|videoGen:vgaGen|lpm_divide:Div0|lpm_divide_hbm:auto_generated                                                             ; lpm_divide_hbm       ; work         ;
-;             |sign_div_unsign_nlh:divider| ; 81 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|videoGen:vgaGen|lpm_divide:Div0|lpm_divide_hbm:auto_generated|sign_div_unsign_nlh:divider                                 ; sign_div_unsign_nlh  ; work         ;
-;                |alt_u_div_kve:divider|    ; 81 (81)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|videoGen:vgaGen|lpm_divide:Div0|lpm_divide_hbm:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_kve:divider           ; alt_u_div_kve        ; work         ;
-;       |lpm_divide:Div1|                   ; 81 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|videoGen:vgaGen|lpm_divide:Div1                                                                                           ; lpm_divide           ; work         ;
-;          |lpm_divide_hbm:auto_generated|  ; 81 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|videoGen:vgaGen|lpm_divide:Div1|lpm_divide_hbm:auto_generated                                                             ; lpm_divide_hbm       ; work         ;
-;             |sign_div_unsign_nlh:divider| ; 81 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|videoGen:vgaGen|lpm_divide:Div1|lpm_divide_hbm:auto_generated|sign_div_unsign_nlh:divider                                 ; sign_div_unsign_nlh  ; work         ;
-;                |alt_u_div_kve:divider|    ; 81 (81)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|videoGen:vgaGen|lpm_divide:Div1|lpm_divide_hbm:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_kve:divider           ; alt_u_div_kve        ; work         ;
-;    |winner_detection:winnerDetect|        ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_connect4|winner_detection:winnerDetect                                                                                             ; winner_detection     ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-----------------------------------------------+
-; Analysis & Synthesis DSP Block Usage Summary  ;
-+---------------------------------+-------------+
-; Statistic                       ; Number Used ;
-+---------------------------------+-------------+
-; Independent 9x9                 ; 3           ;
-; Total number of DSP blocks      ; 3           ;
-;                                 ;             ;
-; Fixed Point Unsigned Multiplier ; 3           ;
-+---------------------------------+-------------+
-
-
-Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------------------------------+
-; State Machine - |toplevel_connect4|arduino_interface:arduino|next_state                                    ;
-+----------------------+---------------------+----------------------+----------------------+-----------------+
-; Name                 ; next_state.STOP_BIT ; next_state.DATA_BITS ; next_state.START_BIT ; next_state.IDLE ;
-+----------------------+---------------------+----------------------+----------------------+-----------------+
-; next_state.IDLE      ; 0                   ; 0                    ; 0                    ; 0               ;
-; next_state.START_BIT ; 0                   ; 0                    ; 1                    ; 1               ;
-; next_state.DATA_BITS ; 0                   ; 1                    ; 0                    ; 1               ;
-; next_state.STOP_BIT  ; 1                   ; 0                    ; 0                    ; 1               ;
-+----------------------+---------------------+----------------------+----------------------+-----------------+
-
-
-Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |toplevel_connect4|arduino_interface:arduino|current_state                                                ;
-+-------------------------+------------------------+-------------------------+-------------------------+--------------------+
-; Name                    ; current_state.STOP_BIT ; current_state.DATA_BITS ; current_state.START_BIT ; current_state.IDLE ;
-+-------------------------+------------------------+-------------------------+-------------------------+--------------------+
-; current_state.IDLE      ; 0                      ; 0                       ; 0                       ; 0                  ;
-; current_state.START_BIT ; 0                      ; 0                       ; 1                       ; 1                  ;
-; current_state.DATA_BITS ; 0                      ; 1                       ; 0                       ; 1                  ;
-; current_state.STOP_BIT  ; 1                      ; 0                       ; 0                       ; 1                  ;
-+-------------------------+------------------------+-------------------------+-------------------------+--------------------+
-
-
-+-----------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                            ;
-+--------------------------------------------+--------------------------------------------------+
-; Register name                              ; Reason for Removal                               ;
-+--------------------------------------------+--------------------------------------------------+
-; matrixTableroControl:matrixCtrl|move_valid ; Merged with matrixTableroControl:matrixCtrl|load ;
-; matrixTablero:matrixReg|matrix[0..69]      ; Stuck at GND due to stuck port clock_enable      ;
-; arduino_interface:arduino|next_state~6     ; Lost fanout                                      ;
-; arduino_interface:arduino|next_state~7     ; Lost fanout                                      ;
-; arduino_interface:arduino|next_state~8     ; Lost fanout                                      ;
-; arduino_interface:arduino|current_state~4  ; Lost fanout                                      ;
-; arduino_interface:arduino|current_state~5  ; Lost fanout                                      ;
-; arduino_interface:arduino|current_state~6  ; Lost fanout                                      ;
-; Total Number of Removed Registers = 77     ;                                                  ;
-+--------------------------------------------+--------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                  ;
-+-----------------------------------+--------------------------------+-------------------------------------------------------------------------+
-; Register name                     ; Reason for Removal             ; Registers Removed due to This Register                                  ;
-+-----------------------------------+--------------------------------+-------------------------------------------------------------------------+
-; matrixTablero:matrixReg|matrix[0] ; Stuck at GND                   ; matrixTablero:matrixReg|matrix[38], matrixTablero:matrixReg|matrix[42], ;
-;                                   ; due to stuck port clock_enable ; matrixTablero:matrixReg|matrix[44], matrixTablero:matrixReg|matrix[46], ;
-;                                   ;                                ; matrixTablero:matrixReg|matrix[43], matrixTablero:matrixReg|matrix[45], ;
-;                                   ;                                ; matrixTablero:matrixReg|matrix[47], matrixTablero:matrixReg|matrix[50], ;
-;                                   ;                                ; matrixTablero:matrixReg|matrix[52], matrixTablero:matrixReg|matrix[54], ;
-;                                   ;                                ; matrixTablero:matrixReg|matrix[51], matrixTablero:matrixReg|matrix[56], ;
-;                                   ;                                ; matrixTablero:matrixReg|matrix[58], matrixTablero:matrixReg|matrix[60], ;
-;                                   ;                                ; matrixTablero:matrixReg|matrix[62], matrixTablero:matrixReg|matrix[64], ;
-;                                   ;                                ; matrixTablero:matrixReg|matrix[66], matrixTablero:matrixReg|matrix[68], ;
-;                                   ;                                ; matrixTablero:matrixReg|matrix[57], matrixTablero:matrixReg|matrix[59], ;
-;                                   ;                                ; matrixTablero:matrixReg|matrix[61], matrixTablero:matrixReg|matrix[63], ;
-;                                   ;                                ; matrixTablero:matrixReg|matrix[65], matrixTablero:matrixReg|matrix[67], ;
-;                                   ;                                ; matrixTablero:matrixReg|matrix[69]                                      ;
-; matrixTablero:matrixReg|matrix[2] ; Stuck at GND                   ; matrixTablero:matrixReg|matrix[48], matrixTablero:matrixReg|matrix[49], ;
-;                                   ; due to stuck port clock_enable ; matrixTablero:matrixReg|matrix[55]                                      ;
-+-----------------------------------+--------------------------------+-------------------------------------------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 140   ;
-; Number of registers using Synchronous Clear  ; 63    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 114   ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 44    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+------------------------------------------------------+
-; Inverted Register Statistics                         ;
-+--------------------------------------------+---------+
-; Inverted Register                          ; Fan out ;
-+--------------------------------------------+---------+
-; matrixTableroControl:matrixCtrl|col_ptr[0] ; 4       ;
-; matrixTableroControl:matrixCtrl|col_ptr[1] ; 4       ;
-; random_selector:randomSel|lfsr[0]          ; 30      ;
-; random_selector:randomSel|lfsr[15]         ; 1       ;
-; random_selector:randomSel|lfsr[13]         ; 2       ;
-; random_selector:randomSel|lfsr[10]         ; 2       ;
-; random_selector:randomSel|lfsr[11]         ; 1       ;
-; random_selector:randomSel|lfsr[7]          ; 1       ;
-; random_selector:randomSel|lfsr[6]          ; 1       ;
-; random_selector:randomSel|lfsr[5]          ; 1       ;
-; Total number of inverted registers = 10    ;         ;
-+--------------------------------------------+---------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |toplevel_connect4|matrixTableroControl:matrixCtrl|selected_col[1] ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |toplevel_connect4|arduino_interface:arduino|baud_counter[5]       ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |toplevel_connect4|arduino_interface:arduino|bit_counter[3]        ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |toplevel_connect4|random_selector:randomSel|random_col[2]         ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTablero:matrixReg|Mux3                    ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTablero:matrixReg|Mux0                    ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTablero:matrixReg|Mux1                    ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTablero:matrixReg|Mux8                    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTablero:matrixReg|Mux11                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTablero:matrixReg|find_empty_slot         ;
-; 64:1               ; 2 bits    ; 84 LEs        ; 60 LEs               ; 24 LEs                 ; No         ; |toplevel_connect4|videoGen:vgaGen|Mux0                            ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 10 LEs               ; 4 LEs                  ; No         ; |toplevel_connect4|matrixTablero:matrixReg|Mux4                    ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTableroControl:matrixCtrl|Mux1            ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTableroControl:matrixCtrl|Mux13           ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |toplevel_connect4|arduino_interface:arduino|next_state.STOP_BIT   ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTablero:matrixReg|Mux7                    ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTableroControl:matrixCtrl|Mux10           ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTableroControl:matrixCtrl|Mux23           ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |toplevel_connect4|arduino_interface:arduino|next_state.IDLE       ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTableroControl:matrixCtrl|Mux4            ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTableroControl:matrixCtrl|Mux16           ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTableroControl:matrixCtrl|Mux3            ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTableroControl:matrixCtrl|Mux6            ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTableroControl:matrixCtrl|Mux14           ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |toplevel_connect4|matrixTableroControl:matrixCtrl|Mux18           ;
-; 137:1              ; 3 bits    ; 273 LEs       ; 273 LEs              ; 0 LEs                  ; No         ; |toplevel_connect4|winner_detection:winnerDetect|winning_line[2]   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: vgaController:vgaCont ;
-+----------------+------------+--------------------------------------+
-; Parameter Name ; Value      ; Type                                 ;
-+----------------+------------+--------------------------------------+
-; HACTIVE        ; 1010000000 ; Unsigned Binary                      ;
-; HFP            ; 0000010000 ; Unsigned Binary                      ;
-; HSYN           ; 0001100000 ; Unsigned Binary                      ;
-; HBP            ; 0000110000 ; Unsigned Binary                      ;
-; HMAX           ; 1100100000 ; Unsigned Binary                      ;
-; VBP            ; 0000100001 ; Unsigned Binary                      ;
-; VACTIVE        ; 0111100000 ; Unsigned Binary                      ;
-; VFP            ; 0000001010 ; Unsigned Binary                      ;
-; VSYN           ; 0000000010 ; Unsigned Binary                      ;
-; VMAX           ; 1000001101 ; Unsigned Binary                      ;
-+----------------+------------+--------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: videoGen:vgaGen|lpm_divide:Div1 ;
-+------------------------+----------------+----------------------------------------+
-; Parameter Name         ; Value          ; Type                                   ;
-+------------------------+----------------+----------------------------------------+
-; LPM_WIDTHN             ; 11             ; Untyped                                ;
-; LPM_WIDTHD             ; 6              ; Untyped                                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
-; LPM_PIPELINE           ; 0              ; Untyped                                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
-; CBXI_PARAMETER         ; lpm_divide_hbm ; Untyped                                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
-+------------------------+----------------+----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: videoGen:vgaGen|lpm_divide:Div0 ;
-+------------------------+----------------+----------------------------------------+
-; Parameter Name         ; Value          ; Type                                   ;
-+------------------------+----------------+----------------------------------------+
-; LPM_WIDTHN             ; 11             ; Untyped                                ;
-; LPM_WIDTHD             ; 6              ; Untyped                                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
-; LPM_PIPELINE           ; 0              ; Untyped                                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
-; CBXI_PARAMETER         ; lpm_divide_hbm ; Untyped                                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
-+------------------------+----------------+----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: random_selector:randomSel|lpm_divide:Mod1 ;
-+------------------------+----------------+--------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                             ;
-+------------------------+----------------+--------------------------------------------------+
-; LPM_WIDTHN             ; 4              ; Untyped                                          ;
-; LPM_WIDTHD             ; 3              ; Untyped                                          ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
-; LPM_PIPELINE           ; 0              ; Untyped                                          ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
-; CBXI_PARAMETER         ; lpm_divide_32m ; Untyped                                          ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
-+------------------------+----------------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: random_selector:randomSel|lpm_divide:Mod0 ;
-+------------------------+----------------+--------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                             ;
-+------------------------+----------------+--------------------------------------------------+
-; LPM_WIDTHN             ; 3              ; Untyped                                          ;
-; LPM_WIDTHD             ; 3              ; Untyped                                          ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
-; LPM_PIPELINE           ; 0              ; Untyped                                          ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
-; CBXI_PARAMETER         ; lpm_divide_22m ; Untyped                                          ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
-+------------------------+----------------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: random_selector:randomSel|lpm_divide:Mod2 ;
-+------------------------+----------------+--------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                             ;
-+------------------------+----------------+--------------------------------------------------+
-; LPM_WIDTHN             ; 4              ; Untyped                                          ;
-; LPM_WIDTHD             ; 3              ; Untyped                                          ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
-; LPM_PIPELINE           ; 0              ; Untyped                                          ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
-; CBXI_PARAMETER         ; lpm_divide_32m ; Untyped                                          ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
-+------------------------+----------------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: random_selector:randomSel|lpm_divide:Mod4 ;
-+------------------------+----------------+--------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                             ;
-+------------------------+----------------+--------------------------------------------------+
-; LPM_WIDTHN             ; 4              ; Untyped                                          ;
-; LPM_WIDTHD             ; 3              ; Untyped                                          ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
-; LPM_PIPELINE           ; 0              ; Untyped                                          ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
-; CBXI_PARAMETER         ; lpm_divide_32m ; Untyped                                          ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
-+------------------------+----------------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: random_selector:randomSel|lpm_divide:Mod3 ;
-+------------------------+----------------+--------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                             ;
-+------------------------+----------------+--------------------------------------------------+
-; LPM_WIDTHN             ; 4              ; Untyped                                          ;
-; LPM_WIDTHD             ; 3              ; Untyped                                          ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
-; LPM_PIPELINE           ; 0              ; Untyped                                          ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
-; CBXI_PARAMETER         ; lpm_divide_32m ; Untyped                                          ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
-+------------------------+----------------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: random_selector:randomSel|lpm_divide:Mod6 ;
-+------------------------+----------------+--------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                             ;
-+------------------------+----------------+--------------------------------------------------+
-; LPM_WIDTHN             ; 4              ; Untyped                                          ;
-; LPM_WIDTHD             ; 3              ; Untyped                                          ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
-; LPM_PIPELINE           ; 0              ; Untyped                                          ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
-; CBXI_PARAMETER         ; lpm_divide_32m ; Untyped                                          ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
-+------------------------+----------------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: random_selector:randomSel|lpm_divide:Mod5 ;
-+------------------------+----------------+--------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                             ;
-+------------------------+----------------+--------------------------------------------------+
-; LPM_WIDTHN             ; 4              ; Untyped                                          ;
-; LPM_WIDTHD             ; 3              ; Untyped                                          ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
-; LPM_PIPELINE           ; 0              ; Untyped                                          ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
-; CBXI_PARAMETER         ; lpm_divide_32m ; Untyped                                          ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
-+------------------------+----------------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-------------------------------------------------------+
 ; Port Connectivity Checks: "arduino_interface:arduino" ;
 +-------+--------+----------+---------------------------+
@@ -698,232 +271,150 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "matrixTablero:matrixReg"                                                                                                                              ;
-+---------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type  ; Severity ; Details                                                                                                                                             ;
-+---------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; data_in ; Input ; Warning  ; Input port expression (42 bits) is smaller than the input port (84 bits) it drives.  Extra input bit(s) "data_in[83..42]" will be connected to GND. ;
-+---------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "connect4_fsm:fsm"                                                                        ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; player[1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "matrixTableroControl:matrixCtrl"                                                                                                        ;
-+------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                                                                           ;
-+------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------+
-; matrix_out ; Output ; Warning  ; Output or bidir port (84 bits) is wider than the port expression (42 bits) it drives; bit(s) "matrix_out[83..42]" have no fanouts ;
-+------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Button_debounce:debounce_start"                                                           ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; button_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "connect4_fsm:fsm"                                                                                                              ;
-+-----------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                   ;
-+-----------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
-; player    ; Output ; Warning  ; Output or bidir port (3 bits) is wider than the port expression (2 bits) it drives; bit(s) "player[2..2]" have no fanouts ;
-; player[2] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
-+-----------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 140                         ;
-;     CLR               ; 40                          ;
-;     CLR SCLR          ; 43                          ;
-;     ENA               ; 3                           ;
-;     ENA CLR           ; 31                          ;
-;     ENA SCLR          ; 10                          ;
-;     SCLR              ; 10                          ;
-;     plain             ; 3                           ;
-; arriav_lcell_comb     ; 676                         ;
-;     arith             ; 287                         ;
-;         0 data inputs ; 30                          ;
-;         1 data inputs ; 173                         ;
-;         2 data inputs ; 16                          ;
-;         3 data inputs ; 25                          ;
-;         4 data inputs ; 40                          ;
-;         5 data inputs ; 3                           ;
-;     extend            ; 14                          ;
-;         7 data inputs ; 14                          ;
-;     normal            ; 375                         ;
-;         1 data inputs ; 23                          ;
-;         2 data inputs ; 82                          ;
-;         3 data inputs ; 50                          ;
-;         4 data inputs ; 50                          ;
-;         5 data inputs ; 80                          ;
-;         6 data inputs ; 90                          ;
-; arriav_mac            ; 3                           ;
-; boundary_port         ; 51                          ;
-;                       ;                             ;
-; Max LUT depth         ; 21.60                       ;
-; Average LUT depth     ; 9.54                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:01     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Tue Apr 15 18:46:07 2025
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA -c VGA
+    Info: Processing started: Tue Apr 29 23:25:17 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA -c VGA --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file winner_detection.sv
-    Info (12023): Found entity 1: winner_detection File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/winner_detection.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file videogen.sv
-    Info (12023): Found entity 1: videoGen File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/videoGen.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file vgacontroller.sv
-    Info (12023): Found entity 1: vgaController File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/vgaController.sv Line: 7
-Info (12021): Found 1 design units, including 1 entities, in source file toplevel_tic_tac_toe_tb.sv
-    Info (12023): Found entity 1: tic_tac_toe_fsm_tb File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/toplevel_tic_tac_toe_tb.sv Line: 6
-Info (12021): Found 1 design units, including 1 entities, in source file toplevel_connect4.sv
-    Info (12023): Found entity 1: toplevel_connect4 File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/toplevel_connect4.sv Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file timer.sv
-    Info (12023): Found entity 1: Timer File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/Timer.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file startscreen.sv
-    Info (12023): Found entity 1: startScreen File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/startScreen.sv Line: 6
+    Info (12023): Found entity 1: startScreen File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/startScreen.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file winner_detection.sv
+    Info (12023): Found entity 1: winner_detection File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file videogen.sv
+    Info (12023): Found entity 1: videoGen File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/videoGen.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file vgacontroller.sv
+    Info (12023): Found entity 1: vgaController File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/vgaController.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_tic_tac_toe_tb.sv
+    Info (12023): Found entity 1: tic_tac_toe_fsm_tb File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_tic_tac_toe_tb.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_connect4.sv
+    Info (12023): Found entity 1: toplevel_connect4 File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file timer.sv
+    Info (12023): Found entity 1: Timer File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Timer.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file spi_main.sv
-    Info (12023): Found entity 1: SPI_main File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/SPI_main.sv Line: 1
+    Info (12023): Found entity 1: SPI_main File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/SPI_main.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file random_selector.sv
-    Info (12023): Found entity 1: random_selector File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/random_selector.sv Line: 5
+    Info (12023): Found entity 1: random_selector File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/random_selector.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file pll.sv
-    Info (12023): Found entity 1: pll File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/pll.sv Line: 5
+    Info (12023): Found entity 1: pll File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/pll.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file matrixtablerocontrol.sv
-    Info (12023): Found entity 1: matrixTableroControl File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/matrixTableroControl.sv Line: 4
+    Info (12023): Found entity 1: matrixTableroControl File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/matrixTableroControl.sv Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file matrixtablero.sv
-    Info (12023): Found entity 1: matrixTablero File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/matrixTablero.sv Line: 5
+    Info (12023): Found entity 1: matrixTablero File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/matrixTablero.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file gameoverscreen.sv
-    Info (12023): Found entity 1: gameOverScreen File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/gameOverScreen.sv Line: 5
+    Info (12023): Found entity 1: gameOverScreen File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/gameOverScreen.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file full_timer.sv
-    Info (12023): Found entity 1: Full_Timer File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/Full_Timer.sv Line: 5
+    Info (12023): Found entity 1: Full_Timer File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Full_Timer.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file connect4_fsm.sv
-    Info (12023): Found entity 1: connect4_fsm File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/connect4_fsm.sv Line: 6
-Info (12021): Found 3 design units, including 3 entities, in source file button_debonce.sv
-    Info (12023): Found entity 1: Button_debounce File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/Button_debonce.sv Line: 5
-    Info (12023): Found entity 2: Slow_Clock_Enable File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/Button_debonce.sv Line: 26
-    Info (12023): Found entity 3: D_FF_with_Enable File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/Button_debonce.sv Line: 45
+    Info (12023): Found entity 1: connect4_fsm File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/connect4_fsm.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file button_debonce.sv
+    Info (12023): Found entity 1: Button_debounce File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Button_debonce.sv Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file bcd_visualizer.sv
-    Info (12023): Found entity 1: BCD_Visualizer File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/BCD_Visualizer.sv Line: 5
+    Info (12023): Found entity 1: BCD_Visualizer File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/BCD_Visualizer.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file arduino_interface.sv
-    Info (12023): Found entity 1: arduino_interface File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/arduino_interface.sv Line: 5
+    Info (12023): Found entity 1: arduino_interface File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/arduino_interface.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file tb_toplevel_connect4.sv
+    Info (12023): Found entity 1: tb_toplevel_connect4 File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/tb_toplevel_connect4.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_connect4_test.sv
+    Info (12023): Found entity 1: toplevel_connect4_test File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4_test.sv Line: 5
 Info (12127): Elaborating entity "toplevel_connect4" for the top level hierarchy
-Info (12128): Elaborating entity "pll" for hierarchy "pll:vgapll" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/toplevel_connect4.sv Line: 55
-Info (12128): Elaborating entity "vgaController" for hierarchy "vgaController:vgaCont" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/toplevel_connect4.sv Line: 66
-Info (12128): Elaborating entity "connect4_fsm" for hierarchy "connect4_fsm:fsm" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/toplevel_connect4.sv Line: 86
-Info (12128): Elaborating entity "matrixTableroControl" for hierarchy "matrixTableroControl:matrixCtrl" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/toplevel_connect4.sv Line: 106
-Warning (10230): Verilog HDL assignment warning at matrixTableroControl.sv(44): truncated value with size 84 to match size of target (42) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/matrixTableroControl.sv Line: 44
-Warning (10230): Verilog HDL assignment warning at matrixTableroControl.sv(53): truncated value with size 84 to match size of target (42) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/matrixTableroControl.sv Line: 53
-Info (12128): Elaborating entity "matrixTablero" for hierarchy "matrixTablero:matrixReg" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/toplevel_connect4.sv Line: 118
-Warning (10230): Verilog HDL assignment warning at arduino_interface.sv(112): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/arduino_interface.sv Line: 112
-Info (12128): Elaborating entity "winner_detection" for hierarchy "winner_detection:winnerDetect" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/toplevel_connect4.sv Line: 126
-Warning (10230): Verilog HDL assignment warning at winner_detection.sv(47): truncated value with size 32 to match size of target (1) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/winner_detection.sv Line: 47
-Warning (10230): Verilog HDL assignment warning at winner_detection.sv(48): truncated value with size 140 to match size of target (24) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/winner_detection.sv Line: 48
-Warning (10230): Verilog HDL assignment warning at winner_detection.sv(64): truncated value with size 32 to match size of target (1) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/winner_detection.sv Line: 64
-Warning (10230): Verilog HDL assignment warning at winner_detection.sv(65): truncated value with size 140 to match size of target (24) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/winner_detection.sv Line: 65
-Warning (10230): Verilog HDL assignment warning at winner_detection.sv(81): truncated value with size 32 to match size of target (1) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/winner_detection.sv Line: 81
-Warning (10230): Verilog HDL assignment warning at winner_detection.sv(82): truncated value with size 140 to match size of target (24) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/winner_detection.sv Line: 82
-Warning (10230): Verilog HDL assignment warning at winner_detection.sv(98): truncated value with size 32 to match size of target (1) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/winner_detection.sv Line: 98
-Warning (10230): Verilog HDL assignment warning at winner_detection.sv(99): truncated value with size 140 to match size of target (24) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/winner_detection.sv Line: 99
-Info (12128): Elaborating entity "Full_Timer" for hierarchy "Full_Timer:timer" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/toplevel_connect4.sv Line: 134
-Warning (10230): Verilog HDL assignment warning at Full_Timer.sv(27): truncated value with size 32 to match size of target (4) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/Full_Timer.sv Line: 27
-Warning (10230): Verilog HDL assignment warning at Full_Timer.sv(31): truncated value with size 32 to match size of target (27) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/Full_Timer.sv Line: 31
-Info (12128): Elaborating entity "BCD_Visualizer" for hierarchy "BCD_Visualizer:segDisplay" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/toplevel_connect4.sv Line: 140
-Info (12128): Elaborating entity "arduino_interface" for hierarchy "arduino_interface:arduino" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/toplevel_connect4.sv Line: 150
-Warning (10230): Verilog HDL assignment warning at arduino_interface.sv(49): truncated value with size 32 to match size of target (16) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/arduino_interface.sv Line: 49
-Warning (10230): Verilog HDL assignment warning at arduino_interface.sv(60): truncated value with size 32 to match size of target (16) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/arduino_interface.sv Line: 60
-Warning (10230): Verilog HDL assignment warning at arduino_interface.sv(82): truncated value with size 32 to match size of target (4) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/arduino_interface.sv Line: 82
-Warning (10230): Verilog HDL assignment warning at arduino_interface.sv(92): truncated value with size 8 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/arduino_interface.sv Line: 92
-Info (12128): Elaborating entity "random_selector" for hierarchy "random_selector:randomSel" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/toplevel_connect4.sv Line: 160
-Warning (10230): Verilog HDL assignment warning at random_selector.sv(33): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/random_selector.sv Line: 33
-Info (12128): Elaborating entity "videoGen" for hierarchy "videoGen:vgaGen" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/toplevel_connect4.sv Line: 186
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(20): truncated value with size 32 to match size of target (11) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/videoGen.sv Line: 20
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(21): truncated value with size 32 to match size of target (11) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/videoGen.sv Line: 21
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(36): truncated value with size 11 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/videoGen.sv Line: 36
-Warning (10230): Verilog HDL assignment warning at videoGen.sv(38): truncated value with size 11 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/videoGen.sv Line: 38
-Info (278001): Inferred 9 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "videoGen:vgaGen|Div1" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/videoGen.sv Line: 39
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "videoGen:vgaGen|Div0" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/videoGen.sv Line: 37
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "random_selector:randomSel|Mod1" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/random_selector.sv Line: 33
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "random_selector:randomSel|Mod0" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/random_selector.sv Line: 33
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "random_selector:randomSel|Mod2" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/random_selector.sv Line: 33
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "random_selector:randomSel|Mod4" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/random_selector.sv Line: 33
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "random_selector:randomSel|Mod3" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/random_selector.sv Line: 33
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "random_selector:randomSel|Mod6" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/random_selector.sv Line: 33
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "random_selector:randomSel|Mod5" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/random_selector.sv Line: 33
-Info (12130): Elaborated megafunction instantiation "videoGen:vgaGen|lpm_divide:Div1" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/videoGen.sv Line: 39
-Info (12133): Instantiated megafunction "videoGen:vgaGen|lpm_divide:Div1" with the following parameter: File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/videoGen.sv Line: 39
-    Info (12134): Parameter "LPM_WIDTHN" = "11"
-    Info (12134): Parameter "LPM_WIDTHD" = "6"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_hbm.tdf
-    Info (12023): Found entity 1: lpm_divide_hbm File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/lpm_divide_hbm.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_nlh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_nlh File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/sign_div_unsign_nlh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_kve.tdf
-    Info (12023): Found entity 1: alt_u_div_kve File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/alt_u_div_kve.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "random_selector:randomSel|lpm_divide:Mod1" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/random_selector.sv Line: 33
-Info (12133): Instantiated megafunction "random_selector:randomSel|lpm_divide:Mod1" with the following parameter: File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/random_selector.sv Line: 33
-    Info (12134): Parameter "LPM_WIDTHN" = "4"
-    Info (12134): Parameter "LPM_WIDTHD" = "3"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_32m.tdf
-    Info (12023): Found entity 1: lpm_divide_32m File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/lpm_divide_32m.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_6kh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_6kh File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/sign_div_unsign_6kh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ise.tdf
-    Info (12023): Found entity 1: alt_u_div_ise File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/alt_u_div_ise.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "random_selector:randomSel|lpm_divide:Mod0" File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/random_selector.sv Line: 33
-Info (12133): Instantiated megafunction "random_selector:randomSel|lpm_divide:Mod0" with the following parameter: File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/random_selector.sv Line: 33
-    Info (12134): Parameter "LPM_WIDTHN" = "3"
-    Info (12134): Parameter "LPM_WIDTHD" = "3"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_22m.tdf
-    Info (12023): Found entity 1: lpm_divide_22m File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/lpm_divide_22m.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_5kh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_5kh File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/sign_div_unsign_5kh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_gse.tdf
-    Info (12023): Found entity 1: alt_u_div_gse File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/db/alt_u_div_gse.tdf Line: 23
-Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (286030): Timing-Driven Synthesis is running
-Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register connect4_fsm:fsm|current_state[1] will power up to Low File: E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/connect4_fsm.sv Line: 48
-Info (17049): 6 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/output_files/VGA.map.smsg
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 776 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 43 output pins
-    Info (21061): Implemented 722 logic cells
-    Info (21062): Implemented 3 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
-    Info: Peak virtual memory: 4944 megabytes
-    Info: Processing ended: Tue Apr 15 18:46:15 2025
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:17
+Info (12128): Elaborating entity "Button_debounce" for hierarchy "Button_debounce:debounce_left" File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv Line: 52
+Warning (10036): Verilog HDL or VHDL warning at Button_debonce.sv(20): object "next_debounced_state" assigned a value but never read File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Button_debonce.sv Line: 20
+Warning (10230): Verilog HDL assignment warning at Button_debonce.sv(44): truncated value with size 32 to match size of target (19) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Button_debonce.sv Line: 44
+Info (12128): Elaborating entity "pll" for hierarchy "pll:vgapll" File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv Line: 106
+Info (12128): Elaborating entity "vgaController" for hierarchy "vgaController:vgaCont" File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv Line: 117
+Info (12128): Elaborating entity "connect4_fsm" for hierarchy "connect4_fsm:fsm" File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv Line: 138
+Info (10264): Verilog HDL Case Statement information at connect4_fsm.sv(125): all case item expressions in this case statement are onehot File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/connect4_fsm.sv Line: 125
+Info (12128): Elaborating entity "matrixTableroControl" for hierarchy "matrixTableroControl:matrixCtrl" File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv Line: 157
+Warning (10230): Verilog HDL assignment warning at matrixTableroControl.sv(44): truncated value with size 84 to match size of target (42) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/matrixTableroControl.sv Line: 44
+Warning (10230): Verilog HDL assignment warning at matrixTableroControl.sv(53): truncated value with size 84 to match size of target (42) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/matrixTableroControl.sv Line: 53
+Info (12128): Elaborating entity "matrixTablero" for hierarchy "matrixTablero:matrixReg" File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv Line: 169
+Warning (10230): Verilog HDL assignment warning at toplevel_connect4_test.sv(216): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4_test.sv Line: 216
+Info (12128): Elaborating entity "winner_detection" for hierarchy "winner_detection:winnerDetect" File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv Line: 177
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(42): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 42
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(45): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 45
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(46): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 46
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(47): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 47
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(48): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 48
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(56): truncated value with size 32 to match size of target (1) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 56
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(67): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 67
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(69): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 69
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(70): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 70
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(71): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 71
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(72): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 72
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(79): truncated value with size 32 to match size of target (1) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 79
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(89): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 89
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(90): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 90
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(91): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 91
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(92): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 92
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(94): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 94
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(95): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 95
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(96): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 96
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(97): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 97
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(104): truncated value with size 32 to match size of target (1) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 104
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(115): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 115
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(116): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 116
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(117): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 117
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(118): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 118
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(121): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 121
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(122): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 122
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(123): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 123
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(124): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 124
+Warning (10230): Verilog HDL assignment warning at winner_detection.sv(132): truncated value with size 32 to match size of target (1) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv Line: 132
+Info (12128): Elaborating entity "Full_Timer" for hierarchy "Full_Timer:timer" File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv Line: 185
+Warning (10230): Verilog HDL assignment warning at Full_Timer.sv(27): truncated value with size 32 to match size of target (4) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Full_Timer.sv Line: 27
+Warning (10230): Verilog HDL assignment warning at Full_Timer.sv(31): truncated value with size 32 to match size of target (27) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Full_Timer.sv Line: 31
+Info (12128): Elaborating entity "BCD_Visualizer" for hierarchy "BCD_Visualizer:segDisplay" File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv Line: 191
+Info (12128): Elaborating entity "arduino_interface" for hierarchy "arduino_interface:arduino" File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv Line: 201
+Warning (10230): Verilog HDL assignment warning at arduino_interface.sv(49): truncated value with size 32 to match size of target (16) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/arduino_interface.sv Line: 49
+Warning (10230): Verilog HDL assignment warning at arduino_interface.sv(60): truncated value with size 32 to match size of target (16) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/arduino_interface.sv Line: 60
+Warning (10230): Verilog HDL assignment warning at arduino_interface.sv(82): truncated value with size 32 to match size of target (4) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/arduino_interface.sv Line: 82
+Warning (10230): Verilog HDL assignment warning at arduino_interface.sv(92): truncated value with size 8 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/arduino_interface.sv Line: 92
+Info (12128): Elaborating entity "random_selector" for hierarchy "random_selector:randomSel" File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv Line: 211
+Warning (10230): Verilog HDL assignment warning at random_selector.sv(33): truncated value with size 32 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/random_selector.sv Line: 33
+Info (12128): Elaborating entity "videoGen" for hierarchy "videoGen:vgaGen" File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv Line: 237
+Warning (10230): Verilog HDL assignment warning at videoGen.sv(20): truncated value with size 32 to match size of target (11) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/videoGen.sv Line: 20
+Warning (10230): Verilog HDL assignment warning at videoGen.sv(21): truncated value with size 32 to match size of target (11) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/videoGen.sv Line: 21
+Warning (10230): Verilog HDL assignment warning at videoGen.sv(36): truncated value with size 11 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/videoGen.sv Line: 36
+Warning (10230): Verilog HDL assignment warning at videoGen.sv(38): truncated value with size 11 to match size of target (3) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/videoGen.sv Line: 38
+Info (12128): Elaborating entity "startScreen" for hierarchy "startScreen:splash" File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv Line: 247
+Warning (10230): Verilog HDL assignment warning at startScreen.sv(25): truncated value with size 32 to match size of target (11) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/startScreen.sv Line: 25
+Warning (10230): Verilog HDL assignment warning at startScreen.sv(26): truncated value with size 32 to match size of target (11) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/startScreen.sv Line: 26
+Warning (10230): Verilog HDL assignment warning at startScreen.sv(27): truncated value with size 32 to match size of target (11) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/startScreen.sv Line: 27
+Warning (10230): Verilog HDL assignment warning at startScreen.sv(28): truncated value with size 32 to match size of target (11) File: E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/startScreen.sv Line: 28
+Info (144001): Generated suppressed messages file E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/output_files/VGA.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 51 warnings
+    Info: Peak virtual memory: 4817 megabytes
+    Info: Processing ended: Tue Apr 29 23:25:23 2025
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:16
 
 
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/output_files/VGA.map.smsg.
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/output_files/VGA.map.smsg.
 
 

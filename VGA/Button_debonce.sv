@@ -1,54 +1,59 @@
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Modulo encargado controlar el debounce de los botones independientemente
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-module Button_debounce (
-    input logic button_in, clk_in,         // Entrada del botón y señal de reloj
-    output logic button_stable              // Salida estabilizada del botón
+////////////////////////////////////////////////////////////////////////
+// Modulo Debounce Simple Basado en Contador
+////////////////////////////////////////////////////////////////////////
+module Button_debounce #(
+    parameter CLK_FREQ      = 50_000_000, // Frecuencia del reloj de entrada (Hz)
+    parameter STABLE_TIME_MS = 10          // Tiempo de estabilidad deseado (ms)
+) (
+    input  logic clk,          // Reloj del sistema
+    input  logic rst,          // Reset (activo alto)
+    input  logic button_in,    // Entrada directa del botón (ruidosa)
+    output logic button_out    // Salida estable del botón
 );
-    logic enable_slow_clk;                  // Señal para habilitar el reloj lento
-    logic FF1, FF2, FF2_inv, FF0;           // Flip-flops utilizados en el proceso de debounce
 
-    // Generador de reloj más lento
-    Slow_Clock_Enable slow_clk_gen (.clk_100MHz(clk_in), .enable_slow_clk(enable_slow_clk));
+    localparam COUNTER_BITS = $clog2(STABLE_TIME_MS * (CLK_FREQ / 1000));
+    localparam MAX_COUNT    = STABLE_TIME_MS * (CLK_FREQ / 1000) - 1;
 
-    // Flip-flops con habilitación de reloj para el debounce
-    D_FF_with_Enable dff_0 (.clk(clk_in), .clk_enable(enable_slow_clk), .D(button_in), .Q(FF0));
-    D_FF_with_Enable dff_1 (.clk(clk_in), .clk_enable(enable_slow_clk), .D(FF0), .Q(FF1));
-    D_FF_with_Enable dff_2 (.clk(clk_in), .clk_enable(enable_slow_clk), .D(FF1), .Q(FF2));
+    logic [COUNTER_BITS-1:0] count;
+    logic sync_ff1, sync_ff2; // Sincronizadores de entrada
+    logic debounced_state_reg;
+    logic next_debounced_state;
 
-    // Inversión de la señal FF2 y generación de la salida debounced
-    assign FF2_inv = ~FF2;                  // Invertimos la salida del último flip-flop
-    assign button_stable = FF1 & FF2_inv;   // La salida estabilizada se genera combinando FF1 y FF2 invertido
-endmodule
-
-// Generador de reloj lento habilitado para la señal del botón
-module Slow_Clock_Enable (
-    input logic clk_100MHz,                 // Reloj de entrada a 100MHz
-    output logic enable_slow_clk            // Salida habilitadora para el reloj lento
-);
-    logic [26:0] clk_counter = 0;           // Contador para dividir la frecuencia del reloj
-
-    // Contador para dividir la frecuencia del reloj y crear un enable de reloj lento
-    always_ff @(posedge clk_100MHz) begin
-        if (clk_counter >= 249999)           // Ajustar el límite del contador para obtener un reloj lento
-            clk_counter <= 0;                 // Reiniciar el contador
-        else
-            clk_counter <= clk_counter + 1;   // Incrementar el contador
+    // Sincronizar la entrada asíncrona del botón con el reloj del sistema
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
+            sync_ff1 <= 1'b0;
+            sync_ff2 <= 1'b0;
+        end else begin
+            sync_ff1 <= button_in;
+            sync_ff2 <= sync_ff1;
+        end
     end
 
-    // Habilitar el reloj lento cuando el contador alcanza el límite
-    assign enable_slow_clk = (clk_counter == 249999) ? 1'b1 : 1'b0;
-endmodule
+    // Lógica del Debounce
+    assign next_debounced_state = debounced_state_reg; // Por defecto, mantener estado
 
-// D Flip-flop con habilitación de reloj para el proceso de debounce
-module D_FF_with_Enable (
-    input logic clk, clk_enable, D,         // Entradas de reloj, habilitación y dato
-    output logic Q = 0                       // Salida del flip-flop inicializada a 0
-);
-    // Captura el valor D solo cuando el habilitador de reloj está activo
-    always_ff @(posedge clk) begin
-        if (clk_enable)
-            Q <= D;                          // Actualiza la salida Q con el valor de D si clk_enable está activo
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
+            debounced_state_reg <= 1'b0; // Estado inicial (asume botón no presionado)
+            count <= '0;
+        end else begin
+            if (sync_ff2 != debounced_state_reg) begin
+                // La entrada sincronizada difiere del estado estable -> Iniciar/Continuar conteo
+                if (count < MAX_COUNT) begin
+                    count <= count + 1;
+                end else begin
+                    // Contador llegó al máximo -> Señal estable, actualizar estado
+                    debounced_state_reg <= sync_ff2;
+                    count <= '0; // Reiniciar contador
+                end
+            end else begin
+                // La entrada coincide con el estado estable -> Reiniciar contador
+                count <= '0;
+            end
+        end
     end
+
+    assign button_out = debounced_state_reg;
+
 endmodule

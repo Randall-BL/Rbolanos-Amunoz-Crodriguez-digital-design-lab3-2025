@@ -56,16 +56,17 @@ module videoGen (
     
     // Previsualización de ficha (amarillo semitransparente)
 	 assign preview_chip = (current_state == 4'b0010) &&
-                      (current_col == selected_col) &&
-                      (y_pos >= start_y - cell_size) &&
-                      (y_pos < start_y) &&
-                      (x_pos >= start_x + current_col * (cell_size + gap)) &&
-                      (x_pos < start_x + current_col * (cell_size + gap) + cell_size);
+								  (x_pos >= start_x + selected_col * (cell_size + gap)) &&
+								  (x_pos <  start_x + selected_col * (cell_size + gap) + cell_size) &&
+								  (y_pos >= start_y - cell_size) &&
+								  (y_pos <  start_y);
+
     
     // Resaltar columna seleccionada (flecha verde arriba del tablero)
 	 assign highlight_col = (x_pos >= start_x + selected_col * (cell_size + gap)) &&
 									(x_pos <  start_x + selected_col * (cell_size + gap) + cell_size) &&
 									(y_pos >= start_y - 10) && (y_pos < start_y);
+
 
 
     // Detectar fichas ganadoras (resaltar en amarillo)

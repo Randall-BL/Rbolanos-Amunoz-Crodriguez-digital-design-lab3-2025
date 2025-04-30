@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Modulo encargado de tener la declaracion y manejo de estados (Definicion de la FSM)
-// Ahora para Connect 4
+// Ahora para Connect 4 (CORREGIDO)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 module connect4_fsm(
@@ -18,7 +18,7 @@ module connect4_fsm(
     output logic game_over,    // Juego terminado
     output logic [3:0] estado, // Estado actual
     output logic random_move,  // Solicitar movimiento aleatorio
-    output logic [2:0] player  // Jugador actual (para módulo de matriz)
+    output logic [1:0] player  // Jugador actual (para módulo de matriz)
 );
 
     // Definición de los estados
@@ -39,6 +39,10 @@ module connect4_fsm(
     // Registro para guardar el jugador inicial
     logic first_player;
 
+    // Señal interna para detectar si alguien quiere iniciar
+    wire start_game;
+    assign start_game = player1_start | player2_start;
+
     // Actualización de estado
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
@@ -49,8 +53,8 @@ module connect4_fsm(
             
             // Guardar jugador inicial
             if (current_state == SELECCION_JUGADOR) begin
-                if (player1_start) first_player <= 1'b0;
-                if (player2_start) first_player <= 1'b1;
+                if (player1_start) first_player <= 1'b0; // Jugador 1 primero
+                if (player2_start) first_player <= 1'b1; // Jugador 2 primero
             end
         end
     end
@@ -60,14 +64,16 @@ module connect4_fsm(
         next_state = current_state;
         
         case (current_state)
-            P_INICIO: 
-                next_state = SELECCION_JUGADOR;
-                
-            SELECCION_JUGADOR:
-                if (player1_start) 
-                    next_state = TURNO_P1;
-                else if (player2_start)
-                    next_state = TURNO_P2;
+            P_INICIO:
+                if (start_game)
+                    next_state = SELECCION_JUGADOR;
+						  
+			    SELECCION_JUGADOR:
+					 if (first_player == 1'b0)
+						next_state = TURNO_P1;
+					 else
+						next_state = TURNO_P2;
+
                     
             TURNO_P1:
                 next_state = ESPERANDO_P1;
@@ -76,7 +82,7 @@ module connect4_fsm(
                 if (move_valid)
                     next_state = FICHA_CAYENDO;
                 else if (timer_done)
-                    next_state = FICHA_CAYENDO; // Movimiento aleatorio
+                    next_state = FICHA_CAYENDO;
                     
             TURNO_P2:
                 next_state = ESPERANDO_P2;
@@ -85,7 +91,7 @@ module connect4_fsm(
                 if (arduino_ready)
                     next_state = FICHA_CAYENDO;
                 else if (timer_done)
-                    next_state = FICHA_CAYENDO; // Movimiento aleatorio
+                    next_state = FICHA_CAYENDO;
                     
             FICHA_CAYENDO:
                 next_state = VERIFICAR_GANADOR;
@@ -101,6 +107,8 @@ module connect4_fsm(
             GAME_OVER:
                 if (rst)
                     next_state = P_INICIO;
+                
+            default: next_state = P_INICIO;
         endcase
     end
 
@@ -143,10 +151,5 @@ module connect4_fsm(
 
     // Asignar estado a la salida
     assign estado = current_state;
-	 
-initial begin
-    current_state = state_t'(4'b0010); // casteo explícito al tipo enum
-end
-
 
 endmodule

@@ -13,26 +13,30 @@ module matrixTablero (
 );
 
     // Lógica para encontrar la posición vacía más baja en la columna seleccionada
-	function automatic [2:0] find_empty_slot(input [41:0] mat, input [2:0] col);
-		 for (int row = 5; row >= 0; row--) begin  // 6 filas (0 a 5)
-			  if (mat[(row*7 + col)*2 +: 2] == 2'b00) // 7 columnas (0 a 6)
-					return row;
-		 end
-		 return 3'b111; // Columna llena
+    function automatic [2:0] find_empty_slot(input [83:0] mat, input [2:0] col);
+        for (int row = 0; row < 6; row++) begin // Revisa desde abajo hacia arriba (fila 0 a 5)
+            if (mat[(row * 7 + col) * 2 +: 2] == 2'b00) begin
+                return row; // Devuelve la primera fila vacía encontrada
+            end
+        end
+        return 3'd6; // Devuelve 6 si la columna está llena
     endfunction
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            matrix <= 84'b0;  // Restablecer la matriz a 0 cuando rst_n está activo bajo
+            matrix <= 84'b0; // Restablecer la matriz a 0 (tablero vacío)
         end
         else if (load) begin
-            // Implementar "gravedad" - colocar ficha en la posición más baja disponible
+            // Colocar ficha en la posición más baja disponible
             logic [2:0] empty_row;
-            empty_row = find_empty_slot(matrix, column);
-            
-            if (empty_row != 3'b111) begin // Si hay espacio en la columna
-                matrix[(empty_row*7 + column)*2 +: 2] <= {1'b1, player}; // 01=P1, 10=P2
+            empty_row = find_empty_slot(matrix, column); // Usa el estado actual de la matrix
+
+            if (empty_row < 6) begin // Si hay espacio (fila 0-5)
+                // Coloca la ficha del jugador correcto (01=P1, 10=P2)
+                matrix[(empty_row * 7 + column) * 2 +: 2] <= {1'b0, ~player}; // player 0 -> 01 (P1), player 1 -> 10 (P2)
             end
+            // Si empty_row es 6 (llena), no se hace nada
         end
+        // Si no hay load ni reset, la matriz mantiene su valor
     end
 endmodule

@@ -184,27 +184,27 @@
 					"strict" : false
 				},
 				{
-					"name" : "confirm",
-					"strict" : false
-				},
-				{
-					"name" : "player2_start",
-					"strict" : false
-				},
-				{
-					"name" : "player1_start",
-					"strict" : false
-				},
-				{
-					"name" : "col_left",
-					"strict" : false
-				},
-				{
-					"name" : "col_right",
-					"strict" : false
-				},
-				{
 					"name" : "arduino_rx",
+					"strict" : false
+				},
+				{
+					"name" : "raw_player1_start",
+					"strict" : false
+				},
+				{
+					"name" : "raw_player2_start",
+					"strict" : false
+				},
+				{
+					"name" : "raw_confirm",
+					"strict" : false
+				},
+				{
+					"name" : "raw_col_left",
+					"strict" : false
+				},
+				{
+					"name" : "raw_col_right",
 					"strict" : false
 				}
 			]

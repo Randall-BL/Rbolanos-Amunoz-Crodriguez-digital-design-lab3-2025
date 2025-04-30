@@ -8,164 +8,162 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/simulation/modelsim
-vBCD_Visualizer
+Z0 dE:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/simulation/modelsim
+varduino_interface
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1727754383
+Z2 !s110 1745990744
 !i10b 1
-!s100 i?HJULBe9b@6?oP`8MMR@1
+!s100 5F8Aam>eORnO5IJXO`ccY0
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IWVFjdZ]A16U]>`j0:e9gg1
+Ie_<ZKPm0V=a<<:TAP8fC83
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1727754298
-8C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/BCD_Visualizer.sv
-FC:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/BCD_Visualizer.sv
-!i122 11
-L0 6 28
+w1744569543
+8E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/arduino_interface.sv
+FE:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/arduino_interface.sv
+!i122 13
+L0 5 108
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1727754383.000000
-!s107 C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/BCD_Visualizer.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA|C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/BCD_Visualizer.sv|
+Z6 !s108 1745990744.000000
+!s107 E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/arduino_interface.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA|E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/arduino_interface.sv|
 !i113 1
 Z7 o-sv -work work
-Z8 !s92 -sv -work work +incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA
+Z8 !s92 -sv -work work {+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA}
 Z9 tCvgOpt 0
+vBCD_Visualizer
+R1
+R2
+!i10b 1
+!s100 SR3h`dZ=TA1;RifgmCIoK1
+R3
+Ic0=b:oTCoXdN1jCCWdjD^3
+R4
+S1
+R0
+w1744579068
+8E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/BCD_Visualizer.sv
+FE:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/BCD_Visualizer.sv
+!i122 12
+L0 5 28
+R5
+r1
+!s85 0
+31
+R6
+!s107 E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/BCD_Visualizer.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA|E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/BCD_Visualizer.sv|
+!i113 1
+R7
+R8
+R9
 n@b@c@d_@visualizer
 vButton_debounce
 R1
 R2
 !i10b 1
-!s100 ?[SMFh^GHDgIi[T07I2ej2
+!s100 J>2h>_99mREXRdfT_k<@j0
 R3
-IYiN@:oPMSjgm49>CjRQX40
+IOZajZ2bS9bhOPng:C5KlU3
 R4
 S1
 R0
-Z10 w1727754152
-Z11 8C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Button_debonce.sv
-Z12 FC:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Button_debonce.sv
-!i122 8
-L0 8 19
+w1745947554
+8E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Button_debonce.sv
+FE:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Button_debonce.sv
+!i122 11
+L0 4 56
 R5
 r1
 !s85 0
 31
-Z13 !s108 1727754382.000000
-Z14 !s107 C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Button_debonce.sv|
-Z15 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA|C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Button_debonce.sv|
+R6
+!s107 E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Button_debonce.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA|E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Button_debonce.sv|
 !i113 1
 R7
 R8
 R9
 n@button_debounce
-vD_FF_with_Enable
+vconnect4_fsm
 R1
 R2
 !i10b 1
-!s100 hgJKQmzeZaQEHTziG::[R1
+!s100 mkZNG]5JEmU>f7jG=5X6a1
 R3
-ISHlNTJnUVO`UWT=P5oG`g3
+Ib^GY]:2]dC=<VGil?H0iP2
 R4
 S1
 R0
-R10
-R11
-R12
-!i122 8
-L0 48 10
-R5
-r1
-!s85 0
-31
-R13
-R14
-R15
-!i113 1
-R7
-R8
-R9
-n@d_@f@f_with_@enable
-vFull_Timer
-R1
-R2
-!i10b 1
-!s100 DGoDlF35J0TFId:LkYm=10
-R3
-I?HO_K6JA`5C4<mgCge[M60
-R4
-S1
-R0
-w1727754277
-8C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Full_Timer.sv
-FC:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Full_Timer.sv
+w1745814690
+8E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/connect4_fsm.sv
+FE:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/connect4_fsm.sv
 !i122 10
-L0 6 52
+L0 6 150
 R5
 r1
 !s85 0
 31
 R6
-!s107 C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Full_Timer.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA|C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Full_Timer.sv|
+!s107 E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/connect4_fsm.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA|E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/connect4_fsm.sv|
+!i113 1
+R7
+R8
+R9
+vFull_Timer
+R1
+R2
+!i10b 1
+!s100 :]3?SnLQk319Dbd;JLnng1
+R3
+IUGHZHeiT4]YoedBB[R19I3
+R4
+S1
+R0
+w1744569667
+8E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Full_Timer.sv
+FE:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Full_Timer.sv
+!i122 9
+L0 5 34
+R5
+r1
+!s85 0
+31
+R6
+!s107 E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Full_Timer.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA|E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Full_Timer.sv|
 !i113 1
 R7
 R8
 R9
 n@full_@timer
-vgameOverScreen
+vmatrixTablero
 R1
 R2
 !i10b 1
-!s100 jT[`5l]`NR2LNH?Q5T4O90
+!s100 _Gb^CcCkbzeRe@^UL6GU^0
 R3
-IfF0I2Tnz74;^S<EnU<ROl2
+IaIFKSzWIkbW6D:[X6df:f1
 R4
 S1
 R0
-w1727754315
-8C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/gameOverScreen.sv
-FC:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/gameOverScreen.sv
-!i122 12
-L0 7 116
+w1745899937
+8E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/matrixTablero.sv
+FE:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/matrixTablero.sv
+!i122 8
+L0 5 38
 R5
 r1
 !s85 0
 31
 R6
-!s107 C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/gameOverScreen.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA|C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/gameOverScreen.sv|
-!i113 1
-R7
-R8
-R9
-ngame@over@screen
-vmatrixTablero
-R1
-Z16 !s110 1727754382
-!i10b 1
-!s100 jWV@BYS1SUZQ1=_m6QZiY0
-R3
-I><CENcSB[^B][I?5QUiTY3
-R4
-S1
-R0
-w1727753902
-8C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTablero.sv
-FC:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTablero.sv
-!i122 6
-L0 7 18
-R5
-r1
-!s85 0
-31
-R13
-!s107 C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTablero.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA|C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTablero.sv|
+!s107 E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/matrixTablero.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA|E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/matrixTablero.sv|
 !i113 1
 R7
 R8
@@ -173,26 +171,26 @@ R9
 nmatrix@tablero
 vmatrixTableroControl
 R1
-R16
+R2
 !i10b 1
-!s100 4aYghZS]EPY^hzd2XeD>j0
+!s100 L85IeO_P1O5cE6]fc4;fd0
 R3
-I=b^mnZk]QaDceEk=FodhH0
+Ih69FFn]3RmcAM?:AXaI]90
 R4
 S1
 R0
-w1727754000
-8C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv
-FC:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv
+w1745989066
+8E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/matrixTableroControl.sv
+FE:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/matrixTableroControl.sv
 !i122 7
-L0 8 61
+L0 4 94
 R5
 r1
 !s85 0
 31
-R13
-!s107 C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA|C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/matrixTableroControl.sv|
+Z10 !s108 1745990743.000000
+!s107 E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/matrixTableroControl.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA|E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/matrixTableroControl.sv|
 !i113 1
 R7
 R8
@@ -200,211 +198,157 @@ R9
 nmatrix@tablero@control
 vpll
 R1
-Z17 !s110 1727754381
+Z11 !s110 1745990743
 !i10b 1
 !s100 oeb4_01Pm8QR1FQIi>_Gh0
 R3
-IEhaF>cP^;FcE5?A>@<ahh3
+Ii@KV_V:`9IDn6foe0F6@h0
 R4
 S1
 R0
-w1727753080
-8C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/pll.sv
-FC:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/pll.sv
-!i122 1
+w1732287516
+8E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/pll.sv
+FE:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/pll.sv
+!i122 6
 L0 5 17
 R5
 r1
 !s85 0
 31
-Z18 !s108 1727754381.000000
-!s107 C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/pll.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA|C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/pll.sv|
+R10
+!s107 E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/pll.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA|E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/pll.sv|
 !i113 1
 R7
 R8
 R9
-vSlow_Clock_Enable
+vrandom_selector
 R1
-R2
+R11
 !i10b 1
-!s100 j3D_5dYSW69X7[Q3[3`OT3
+!s100 2H4LJ`zR=cZ1F]QP[`_Fn0
 R3
-I5iAh4a71F3KWeY[:Q0E8h3
+Id_a4=nB?;e8EFT]0k0E8W2
 R4
 S1
 R0
-R10
-R11
-R12
-!i122 8
-L0 29 17
+w1744569580
+8E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/random_selector.sv
+FE:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/random_selector.sv
+!i122 5
+L0 5 43
 R5
 r1
 !s85 0
 31
-R13
-R14
-R15
+R10
+!s107 E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/random_selector.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA|E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/random_selector.sv|
 !i113 1
 R7
 R8
 R9
-n@slow_@clock_@enable
 vstartScreen
 R1
-R16
+R11
 !i10b 1
-!s100 PP:Gc<2OG`5<P3X0180AF3
+!s100 G;8K]LTXjR^Ua67nJ@djJ3
 R3
-I3=R7=F2LXgLSC@:RJ49aO0
+IfZbflYPYXDcmcOIGJ;V<22
 R4
 S1
 R0
-w1727754324
-8C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/startScreen.sv
-FC:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/startScreen.sv
-!i122 5
-L0 7 88
+w1745813230
+8E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/startScreen.sv
+FE:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/startScreen.sv
+!i122 0
+L0 5 80
 R5
 r1
 !s85 0
 31
-R13
-!s107 C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/startScreen.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA|C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/startScreen.sv|
+R10
+!s107 E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/startScreen.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA|E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/startScreen.sv|
 !i113 1
 R7
 R8
 R9
 nstart@screen
-vtic_tac_toe_fsm
-R1
-R17
-!i10b 1
-!s100 CI:QcU2hKbM@?Rgij]XSW1
-R3
-I<ao2?=7UiOeSF?bImiNL20
-R4
-S1
-R0
-w1727753214
-8C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/tic_tac_toe_fsm.sv
-FC:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/tic_tac_toe_fsm.sv
-!i122 3
-L0 7 126
-R5
-r1
-!s85 0
-31
-R18
-!s107 C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/tic_tac_toe_fsm.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA|C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/tic_tac_toe_fsm.sv|
-!i113 1
-R7
-R8
-R9
-vtic_tac_toe_fsm_tb
+vtb_toplevel_connect4
 R1
 R2
 !i10b 1
-!s100 >O<=l93h>l>8k]8>F:1jJ0
+!s100 d=WFOPBf>gFIROE^UP7bN0
 R3
-IVV>eL_SBjhZP_KhN5M7T@1
+IQP]nZz[A;ojnh1[I0?aTB2
 R4
 S1
 R0
-w1727753777
-8C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe_tb.sv
-FC:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe_tb.sv
-!i122 13
-L0 8 112
+w1745990246
+8E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/tb_toplevel_connect4.sv
+FE:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/tb_toplevel_connect4.sv
+!i122 14
+L0 3 252
 R5
 r1
 !s85 0
 31
 R6
-!s107 C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe_tb.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA|C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe_tb.sv|
+!s107 E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/tb_toplevel_connect4.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA|E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/tb_toplevel_connect4.sv|
 !i113 1
 R7
 R8
 R9
-vTimer
+vtoplevel_connect4
 R1
-R2
+R11
 !i10b 1
-!s100 N0G?419LBi<RUhl`]gmWR2
+!s100 h]@1gg^PgRoWUFY:X]9OI3
 R3
-IIGb^hzeid=HZ3FL_fKTST2
+IeAcP4<:KM@39fD:`_g0XX1
 R4
 S1
 R0
-w1727754234
-8C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Timer.sv
-FC:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Timer.sv
-!i122 9
-L0 7 22
-R5
-r1
-!s85 0
-31
-R6
-!s107 C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Timer.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA|C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/Timer.sv|
-!i113 1
-R7
-R8
-R9
-n@timer
-vtoplevel_tic_tac_toe
-R1
-R16
-!i10b 1
-!s100 jIg@;SP6R;iT<C8ZIHd:53
-R3
-IJcYV<B9f@61Ma=5^PJ1@W3
-R4
-S1
-R0
-w1727753680
-8C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv
-FC:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv
+w1745948222
+8E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv
+FE:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv
 !i122 4
-L0 8 172
+L0 5 253
 R5
 r1
 !s85 0
 31
-R18
-!s107 C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA|C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/toplevel_tic_tac_toe.sv|
+R10
+!s107 E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA|E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv|
 !i113 1
 R7
 R8
 R9
 vvgaController
 R1
-R17
+R11
 !i10b 1
-!s100 8diczXm2o4G31>:XdBl]F1
+!s100 f_Z2WI`Pg4AbC3>Bc_3HW0
 R3
-INYCza0MN<5jWcDGzNk:DV3
+IBz0UiVK:imofb<ZBdmc>92
 R4
 S1
 R0
-w1727752932
-8C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/vgaController.sv
-FC:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/vgaController.sv
-!i122 0
-L0 7 38
+w1744680213
+8E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/vgaController.sv
+FE:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/vgaController.sv
+!i122 3
+L0 7 39
 R5
 r1
 !s85 0
 31
-R18
-!s107 C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/vgaController.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA|C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/vgaController.sv|
+R10
+!s107 E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/vgaController.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA|E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/vgaController.sv|
 !i113 1
 R7
 R8
@@ -412,28 +356,54 @@ R9
 nvga@controller
 vvideoGen
 R1
-R17
+R11
 !i10b 1
-!s100 hR?X7YGfNzQ?E0LDGoRQT0
+!s100 QChVkTb9X7]zi:a;4>PIk3
 R3
-IWW2<;h:2nOYN6Do[0MK6<3
+IBCMeC5LE@6C6FP4bF[fKR1
 R4
 S1
 R0
-w1727753077
-8C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/videoGen.sv
-FC:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/videoGen.sv
+w1745363892
+8E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/videoGen.sv
+FE:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/videoGen.sv
 !i122 2
-L0 6 126
+L0 5 145
 R5
 r1
 !s85 0
 31
-R18
-!s107 C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/videoGen.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA|C:/Users/tenor/OneDrive/Documentos/Lab1_TDD/jtenorio_aflores_klobo_digital_design_lab_2024/Laboratorio_3/VGA/videoGen.sv|
+R10
+!s107 E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/videoGen.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA|E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/videoGen.sv|
 !i113 1
 R7
 R8
 R9
 nvideo@gen
+vwinner_detection
+R1
+R11
+!i10b 1
+!s100 zORC74C?XeCWU4KalV]UE3
+R3
+Ioc^Aaa^SAXBONR?Kn>O^B3
+R4
+S1
+R0
+w1745990717
+8E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv
+FE:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv
+!i122 1
+L0 4 140
+R5
+r1
+!s85 0
+31
+R10
+!s107 E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA|E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv|
+!i113 1
+R7
+R8
+R9

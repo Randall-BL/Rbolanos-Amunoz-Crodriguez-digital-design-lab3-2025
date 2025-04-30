@@ -63,7 +63,7 @@ module matrixTableroControl (
             end
             
             // Turno del jugador 1 (FPGA)
-            if (current_state == 4'b0010 && confirm && !column_full) begin // Cambiado a detección de flanco positivo
+             if ((current_state == 4'b0010 || current_state == 4'b0011) && confirm && !column_full) begin // Cambiado a detección de flanco positivo
                 load <= 1'b1;
                 move_valid <= 1'b1;
             end
