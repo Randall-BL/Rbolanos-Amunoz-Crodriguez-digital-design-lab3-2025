@@ -123,7 +123,7 @@ module toplevel_connect4 (
         // .player1_start(start_game), // Si 'start_game' es el único botón de inicio
         .player1_start(player1_start), // Usa las señales debounced
         .player2_start(player2_start), // Usa las señales debounced
-        .move_valid(move_valid || random_move_valid),
+	.move_valid(move_valid || random_move_valid || arduino_move_ready),
         .arduino_ready(arduino_move_ready),
         .winner_found(winner_found),
         .board_full(board_full),
