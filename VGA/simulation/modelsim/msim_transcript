@@ -11,10 +11,10 @@
 # vmap altera_ver ./verilog_libs/altera_ver 
 # Copying C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
-# vlog -vlog01compat -work altera_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_primitives.v}
+# vlog -vlog01compat -work altera_ver {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_primitives.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:30 on Apr 29,2025
-# vlog -reportprogress 300 -vlog01compat -work altera_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_primitives.v 
+# Start time: 09:39:31 on Apr 30,2025
+# vlog -reportprogress 300 -vlog01compat -work altera_ver c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_primitives.v 
 # -- Compiling module global
 # -- Compiling module carry
 # -- Compiling module cascade
@@ -95,7 +95,7 @@
 # 	alt_iobuf_diff
 # 	alt_bidir_diff
 # 	alt_bidir_buf
-# End time: 23:25:31 on Apr 29,2025, Elapsed time: 0:00:01
+# End time: 09:39:32 on Apr 30,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/lpm_ver
@@ -104,10 +104,10 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap lpm_ver ./verilog_libs/lpm_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work lpm_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/220model.v}
+# vlog -vlog01compat -work lpm_ver {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/220model.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:31 on Apr 29,2025
-# vlog -reportprogress 300 -vlog01compat -work lpm_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/220model.v 
+# Start time: 09:39:32 on Apr 30,2025
+# vlog -reportprogress 300 -vlog01compat -work lpm_ver c:/intelfpga_lite/18.1/quartus/eda/sim_lib/220model.v 
 # -- Compiling module LPM_MEMORY_INITIALIZATION
 # -- Compiling module LPM_HINT_EVALUATION
 # -- Compiling module LPM_DEVICE_FAMILIES
@@ -170,7 +170,7 @@
 # 	lpm_inpad
 # 	lpm_outpad
 # 	lpm_bipad
-# End time: 23:25:32 on Apr 29,2025, Elapsed time: 0:00:01
+# End time: 09:39:33 on Apr 30,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/sgate_ver
@@ -179,10 +179,10 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap sgate_ver ./verilog_libs/sgate_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work sgate_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/sgate.v}
+# vlog -vlog01compat -work sgate_ver {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/sgate.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:32 on Apr 29,2025
-# vlog -reportprogress 300 -vlog01compat -work sgate_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/sgate.v 
+# Start time: 09:39:33 on Apr 30,2025
+# vlog -reportprogress 300 -vlog01compat -work sgate_ver c:/intelfpga_lite/18.1/quartus/eda/sim_lib/sgate.v 
 # -- Compiling module oper_add
 # -- Compiling module oper_addsub
 # -- Compiling module mux21
@@ -223,7 +223,7 @@
 # 	oper_decoder
 # 	oper_bus_mux
 # 	oper_latch
-# End time: 23:25:32 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:33 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/altera_mf_ver
@@ -232,10 +232,10 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap altera_mf_ver ./verilog_libs/altera_mf_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work altera_mf_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_mf.v}
+# vlog -vlog01compat -work altera_mf_ver {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_mf.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:32 on Apr 29,2025
-# vlog -reportprogress 300 -vlog01compat -work altera_mf_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_mf.v 
+# Start time: 09:39:33 on Apr 30,2025
+# vlog -reportprogress 300 -vlog01compat -work altera_mf_ver c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_mf.v 
 # -- Compiling module lcell
 # -- Compiling module ALTERA_MF_MEMORY_INITIALIZATION
 # -- Compiling module ALTERA_MF_HINT_EVALUATION
@@ -364,7 +364,7 @@
 # 	alt_fault_injection
 # 	sld_virtual_jtag_basic
 # 	altsource_probe
-# End time: 23:25:33 on Apr 29,2025, Elapsed time: 0:00:01
+# End time: 09:39:35 on Apr 30,2025, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/altera_lnsim_ver
@@ -373,10 +373,10 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap altera_lnsim_ver ./verilog_libs/altera_lnsim_ver 
 # Modifying modelsim.ini
-# vlog -sv -work altera_lnsim_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_lnsim.sv}
+# vlog -sv -work altera_lnsim_ver {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_lnsim.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:33 on Apr 29,2025
-# vlog -reportprogress 300 -sv -work altera_lnsim_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_lnsim.sv 
+# Start time: 09:39:35 on Apr 30,2025
+# vlog -reportprogress 300 -sv -work altera_lnsim_ver c:/intelfpga_lite/18.1/quartus/eda/sim_lib/altera_lnsim.sv 
 # -- Compiling package altera_lnsim_functions
 # -- Compiling package altera_generic_pll_functions
 # -- Compiling module generic_pll
@@ -458,7 +458,7 @@
 # 	altera_iopll
 # 	fourteennm_altera_iopll
 # 	fourteennm_simple_iopll
-# End time: 23:25:34 on Apr 29,2025, Elapsed time: 0:00:01
+# End time: 09:39:35 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/cyclonev_ver
@@ -467,36 +467,26 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap cyclonev_ver ./verilog_libs/cyclonev_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work cyclonev_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v}
+# vlog -vlog01compat -work cyclonev_ver {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:34 on Apr 29,2025
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v 
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# Start time: 09:39:36 on Apr 30,2025
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/intelfpga_lite/18.1/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v 
 # 
 # Top level modules:
-# End time: 23:25:36 on Apr 29,2025, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 10
-# vlog -vlog01compat -work cyclonev_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:36 on Apr 29,2025
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v 
-# 
-# Top level modules:
-# End time: 23:25:37 on Apr 29,2025, Elapsed time: 0:00:01
+# End time: 09:39:38 on Apr 30,2025, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work cyclonev_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_atoms.v}
+# vlog -vlog01compat -work cyclonev_ver {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:37 on Apr 29,2025
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_atoms.v 
+# Start time: 09:39:38 on Apr 30,2025
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/intelfpga_lite/18.1/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v 
+# 
+# Top level modules:
+# End time: 09:39:40 on Apr 30,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work cyclonev_ver {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/cyclonev_atoms.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:39:40 on Apr 30,2025
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/intelfpga_lite/18.1/quartus/eda/sim_lib/cyclonev_atoms.v 
 # -- Compiling UDP CYCLONEV_PRIM_DFFE
 # -- Compiling UDP CYCLONEV_PRIM_DFFEAS
 # -- Compiling UDP CYCLONEV_PRIM_DFFEAS_HIGH
@@ -635,7 +625,7 @@
 # 	cyclonev_mem_phy
 # 	cyclonev_oscillator
 # 	cyclonev_hps_interface_fpga2sdram
-# End time: 23:25:38 on Apr 29,2025, Elapsed time: 0:00:01
+# End time: 09:39:40 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/cyclonev_hssi_ver
@@ -644,18 +634,18 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap cyclonev_hssi_ver ./verilog_libs/cyclonev_hssi_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work cyclonev_hssi_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v}
+# vlog -vlog01compat -work cyclonev_hssi_ver {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:38 on Apr 29,2025
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_hssi_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v 
+# Start time: 09:39:41 on Apr 30,2025
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_hssi_ver c:/intelfpga_lite/18.1/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v 
 # 
 # Top level modules:
-# End time: 23:25:40 on Apr 29,2025, Elapsed time: 0:00:02
+# End time: 09:39:42 on Apr 30,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work cyclonev_hssi_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_hssi_atoms.v}
+# vlog -vlog01compat -work cyclonev_hssi_ver {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/cyclonev_hssi_atoms.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:40 on Apr 29,2025
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_hssi_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_hssi_atoms.v 
+# Start time: 09:39:42 on Apr 30,2025
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_hssi_ver c:/intelfpga_lite/18.1/quartus/eda/sim_lib/cyclonev_hssi_atoms.v 
 # -- Compiling module cyclonev_hssi_8g_pcs_aggregate
 # -- Compiling module cyclonev_hssi_8g_rx_pcs
 # -- Compiling module cyclonev_hssi_8g_tx_pcs
@@ -754,7 +744,7 @@
 # 	arriav_hssi_avmm_interface
 # 	arriav_hssi_pma_hi_pmaif
 # 	arriav_hssi_pma_hi_xcvrif
-# End time: 23:25:40 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:43 on Apr 30,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/cyclonev_pcie_hip_ver
@@ -763,30 +753,24 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap cyclonev_pcie_hip_ver ./verilog_libs/cyclonev_pcie_hip_ver 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work cyclonev_pcie_hip_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v}
+# vlog -vlog01compat -work cyclonev_pcie_hip_ver {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:40 on Apr 29,2025
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_pcie_hip_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v 
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
-# ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
+# Start time: 09:39:43 on Apr 30,2025
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_pcie_hip_ver c:/intelfpga_lite/18.1/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v 
 # 
 # Top level modules:
-# End time: 23:25:43 on Apr 29,2025, Elapsed time: 0:00:03
-# Errors: 0, Warnings: 6
-# vlog -vlog01compat -work cyclonev_pcie_hip_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v}
+# End time: 09:39:45 on Apr 30,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work cyclonev_pcie_hip_ver {c:/intelfpga_lite/18.1/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:43 on Apr 29,2025
-# vlog -reportprogress 300 -vlog01compat -work cyclonev_pcie_hip_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v 
+# Start time: 09:39:45 on Apr 30,2025
+# vlog -reportprogress 300 -vlog01compat -work cyclonev_pcie_hip_ver c:/intelfpga_lite/18.1/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v 
 # -- Compiling module cyclonev_hd_altpe2_hip_top
 # -- Compiling module arriav_hd_altpe2_hip_top
 # 
 # Top level modules:
 # 	cyclonev_hd_altpe2_hip_top
-# End time: 23:25:43 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:46 on Apr 30,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # if {[file exists rtl_work]} {
@@ -798,161 +782,161 @@
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+E:/Maquinas\ Virtuales/Carpeta\ Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA {E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/startScreen.sv}
+# vlog -sv -work work +incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA {C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/startScreen.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:43 on Apr 29,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA" E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/startScreen.sv 
+# Start time: 09:39:46 on Apr 30,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA" C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/startScreen.sv 
 # -- Compiling module startScreen
 # 
 # Top level modules:
 # 	startScreen
-# End time: 23:25:43 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:46 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/Maquinas\ Virtuales/Carpeta\ Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA {E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv}
+# vlog -sv -work work +incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA {C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/winner_detection.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:43 on Apr 29,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA" E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/winner_detection.sv 
+# Start time: 09:39:46 on Apr 30,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA" C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/winner_detection.sv 
 # -- Compiling module winner_detection
 # 
 # Top level modules:
 # 	winner_detection
-# End time: 23:25:43 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:46 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/Maquinas\ Virtuales/Carpeta\ Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA {E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/videoGen.sv}
+# vlog -sv -work work +incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA {C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/videoGen.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:43 on Apr 29,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA" E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/videoGen.sv 
+# Start time: 09:39:46 on Apr 30,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA" C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/videoGen.sv 
 # -- Compiling module videoGen
 # 
 # Top level modules:
 # 	videoGen
-# End time: 23:25:43 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:46 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/Maquinas\ Virtuales/Carpeta\ Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA {E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/vgaController.sv}
+# vlog -sv -work work +incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA {C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/vgaController.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:43 on Apr 29,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA" E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/vgaController.sv 
+# Start time: 09:39:46 on Apr 30,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA" C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/vgaController.sv 
 # -- Compiling module vgaController
 # 
 # Top level modules:
 # 	vgaController
-# End time: 23:25:43 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:46 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/Maquinas\ Virtuales/Carpeta\ Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA {E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv}
+# vlog -sv -work work +incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA {C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/toplevel_connect4.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:43 on Apr 29,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA" E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/toplevel_connect4.sv 
+# Start time: 09:39:46 on Apr 30,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA" C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/toplevel_connect4.sv 
 # -- Compiling module toplevel_connect4
 # 
 # Top level modules:
 # 	toplevel_connect4
-# End time: 23:25:43 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:46 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/Maquinas\ Virtuales/Carpeta\ Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA {E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/random_selector.sv}
+# vlog -sv -work work +incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA {C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/random_selector.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:43 on Apr 29,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA" E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/random_selector.sv 
+# Start time: 09:39:46 on Apr 30,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA" C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/random_selector.sv 
 # -- Compiling module random_selector
 # 
 # Top level modules:
 # 	random_selector
-# End time: 23:25:43 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:46 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/Maquinas\ Virtuales/Carpeta\ Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA {E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/pll.sv}
+# vlog -sv -work work +incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA {C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/pll.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:43 on Apr 29,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA" E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/pll.sv 
+# Start time: 09:39:46 on Apr 30,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA" C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/pll.sv 
 # -- Compiling module pll
 # 
 # Top level modules:
 # 	pll
-# End time: 23:25:43 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:46 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/Maquinas\ Virtuales/Carpeta\ Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA {E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/matrixTableroControl.sv}
+# vlog -sv -work work +incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA {C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/matrixTableroControl.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:43 on Apr 29,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA" E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/matrixTableroControl.sv 
+# Start time: 09:39:46 on Apr 30,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA" C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/matrixTableroControl.sv 
 # -- Compiling module matrixTableroControl
 # 
 # Top level modules:
 # 	matrixTableroControl
-# End time: 23:25:44 on Apr 29,2025, Elapsed time: 0:00:01
+# End time: 09:39:46 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/Maquinas\ Virtuales/Carpeta\ Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA {E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/matrixTablero.sv}
+# vlog -sv -work work +incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA {C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/matrixTablero.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:44 on Apr 29,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA" E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/matrixTablero.sv 
+# Start time: 09:39:47 on Apr 30,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA" C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/matrixTablero.sv 
 # -- Compiling module matrixTablero
 # 
 # Top level modules:
 # 	matrixTablero
-# End time: 23:25:44 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:47 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/Maquinas\ Virtuales/Carpeta\ Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA {E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Full_Timer.sv}
+# vlog -sv -work work +incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA {C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/Full_Timer.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:44 on Apr 29,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA" E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Full_Timer.sv 
+# Start time: 09:39:47 on Apr 30,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA" C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/Full_Timer.sv 
 # -- Compiling module Full_Timer
 # 
 # Top level modules:
 # 	Full_Timer
-# End time: 23:25:44 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:47 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/Maquinas\ Virtuales/Carpeta\ Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA {E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/connect4_fsm.sv}
+# vlog -sv -work work +incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA {C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/connect4_fsm.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:44 on Apr 29,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA" E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/connect4_fsm.sv 
+# Start time: 09:39:47 on Apr 30,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA" C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/connect4_fsm.sv 
 # -- Compiling module connect4_fsm
 # 
 # Top level modules:
 # 	connect4_fsm
-# End time: 23:25:44 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:47 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/Maquinas\ Virtuales/Carpeta\ Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA {E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Button_debonce.sv}
+# vlog -sv -work work +incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA {C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/Button_debonce.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:44 on Apr 29,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA" E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/Button_debonce.sv 
+# Start time: 09:39:47 on Apr 30,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA" C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/Button_debonce.sv 
 # -- Compiling module Button_debounce
 # 
 # Top level modules:
 # 	Button_debounce
-# End time: 23:25:44 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:47 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/Maquinas\ Virtuales/Carpeta\ Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA {E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/BCD_Visualizer.sv}
+# vlog -sv -work work +incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA {C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/BCD_Visualizer.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:44 on Apr 29,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA" E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/BCD_Visualizer.sv 
+# Start time: 09:39:47 on Apr 30,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA" C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/BCD_Visualizer.sv 
 # -- Compiling module BCD_Visualizer
 # 
 # Top level modules:
 # 	BCD_Visualizer
-# End time: 23:25:44 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:47 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+E:/Maquinas\ Virtuales/Carpeta\ Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA {E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/arduino_interface.sv}
+# vlog -sv -work work +incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA {C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/arduino_interface.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:44 on Apr 29,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA" E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/arduino_interface.sv 
+# Start time: 09:39:47 on Apr 30,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA" C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/arduino_interface.sv 
 # -- Compiling module arduino_interface
 # 
 # Top level modules:
 # 	arduino_interface
-# End time: 23:25:44 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:47 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+E:/Maquinas\ Virtuales/Carpeta\ Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA {E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/tb_toplevel_connect4.sv}
+# vlog -sv -work work +incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA {C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/tb_toplevel_connect4.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 23:25:44 on Apr 29,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA" E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/tb_toplevel_connect4.sv 
+# Start time: 09:39:47 on Apr 30,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA" C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/tb_toplevel_connect4.sv 
 # -- Compiling module tb_toplevel_connect4
 # 
 # Top level modules:
 # 	tb_toplevel_connect4
-# End time: 23:25:44 on Apr 29,2025, Elapsed time: 0:00:00
+# End time: 09:39:47 on Apr 30,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_toplevel_connect4
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_toplevel_connect4 
-# Start time: 23:25:44 on Apr 29,2025
+# Start time: 09:39:47 on Apr 30,2025
 # Loading sv_std.std
 # Loading work.tb_toplevel_connect4
 # Loading work.toplevel_connect4
@@ -1010,9 +994,9 @@
 # ======================================
 #          FIN DE LA SIMULACION         
 # ======================================
-# ** Note: $finish    : E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/tb_toplevel_connect4.sv(251)
+# ** Note: $finish    : C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/tb_toplevel_connect4.sv(251)
 #    Time: 24009540 ns  Iteration: 0  Instance: /tb_toplevel_connect4
 # 1
-# Break in Module tb_toplevel_connect4 at E:/Maquinas Virtuales/Carpeta Compartida/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025/VGA/tb_toplevel_connect4.sv line 251
-# End time: 23:26:18 on Apr 29,2025, Elapsed time: 0:00:34
+# Break in Module tb_toplevel_connect4 at C:/Users/User/Downloads/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/tb_toplevel_connect4.sv line 251
+# End time: 09:45:25 on Apr 30,2025, Elapsed time: 0:05:38
 # Errors: 0, Warnings: 0

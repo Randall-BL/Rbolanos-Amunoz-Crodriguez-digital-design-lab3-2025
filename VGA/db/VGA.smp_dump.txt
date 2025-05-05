@@ -1,0 +1,11 @@
+
+State Machine - |toplevel_connect4|connect4_fsm:fsm|current_state
+Name current_state.VERIFICAR_GANADOR current_state.ESPERANDO_P2 current_state.TURNO_P2 current_state.ESPERANDO_P1 current_state.TURNO_P1 current_state.SELECCION_JUGADOR current_state.P_INICIO current_state.GAME_OVER 
+current_state.P_INICIO 0 0 0 0 0 0 0 0 
+current_state.SELECCION_JUGADOR 0 0 0 0 0 1 1 0 
+current_state.TURNO_P1 0 0 0 0 1 0 1 0 
+current_state.ESPERANDO_P1 0 0 0 1 0 0 1 0 
+current_state.TURNO_P2 0 0 1 0 0 0 1 0 
+current_state.ESPERANDO_P2 0 1 0 0 0 0 1 0 
+current_state.VERIFICAR_GANADOR 1 0 0 0 0 0 1 0 
+current_state.GAME_OVER 0 0 0 0 0 0 1 1 
