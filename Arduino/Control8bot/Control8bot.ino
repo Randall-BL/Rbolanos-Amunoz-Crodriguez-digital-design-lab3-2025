@@ -1,30 +1,54 @@
-const uint8_t botones[] = {2, 3, 4, 5, 6, 7, 8};  
-const size_t N = sizeof(botones) / sizeof(botones[0]);
+const int botonIzquierda = 2;
+const int botonDerecha = 3;
+const int botonSeleccionar = 4;
+
+int columnaActual = 0; // Rango 0 a 6
+
 void setup() {
-  Serial.begin(9600);  // Comunicación UART con la FPGA
-  for (size_t i = 0; i < N; ++i) {
-    pinMode(botones[i], INPUT_PULLUP);  // Activa resistencia interna
-  }
+  Serial.begin(9600);
+  pinMode(botonIzquierda, INPUT_PULLUP);
+  pinMode(botonDerecha, INPUT_PULLUP);
+  pinMode(botonSeleccionar, INPUT_PULLUP);
+
+  // para dev
+  Serial.println("Inicio. Columna actual: 0");
 }
-uint8_t leer_columna() {
-  for (uint8_t i = 0; i < N; ++i) {
-    if (digitalRead(botones[i]) == LOW) {  // Botón presionado (LOW por INPUT_PULLUP)
-      delay(30);  // Debounce
-      if (digitalRead(botones[i]) == LOW) {
-        // Esperar a que se suelte
-        while (digitalRead(botones[i]) == LOW);
-        return i;  // Retorna el número de columna (0 a 6)
-      }
-    }
-  }
-  return 0xFF;  // Ninguno presionado
-}
+
 void loop() {
-  uint8_t columna = leer_columna();
-  if (columna != 0xFF) {
-    //formto: A+columna+ \n
-    Serial.print('A');             // Inicio msj
-    Serial.print(columna);         // Número de columna char ASCII)
-    Serial.print('\n');            // Fin msje
+  static bool btnIzqAnterior = HIGH;
+  static bool btnDerAnterior = HIGH;
+  static bool btnSelAnterior = HIGH;
+
+  bool btnIzq = digitalRead(botonIzquierda);
+  bool btnDer = digitalRead(botonDerecha);
+  bool btnSel = digitalRead(botonSeleccionar);
+
+  // Movimiento izquierda
+  if (btnIzq == LOW && btnIzqAnterior == HIGH) {
+    columnaActual = (columnaActual == 0) ? 6 : columnaActual - 1;
+    Serial.print("Columna actual: ");
+    Serial.println(columnaActual);
+    delay(200); // Antirrebound
   }
+
+  // Movimiento derecha
+  if (btnDer == LOW && btnDerAnterior == HIGH) {
+    columnaActual = (columnaActual == 6) ? 0 : columnaActual + 1;
+    Serial.print("Columna actual: ");
+    Serial.println(columnaActual);
+    delay(200); 
+
+  }
+
+  // Seleccionar columna actual
+  if (btnSel == LOW && btnSelAnterior == HIGH) {
+    Serial.write('0' + columnaActual); // Envía por UART como ASCII
+    Serial.print("Columna enviada: ");
+    Serial.println(columnaActual);
+    delay(200); 
+  }
+
+  btnIzqAnterior = btnIzq;
+  btnDerAnterior = btnDer;
+  btnSelAnterior = btnSel;
 }
