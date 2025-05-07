@@ -184,27 +184,23 @@
 					"strict" : false
 				},
 				{
-					"name" : "arduino_rx",
+					"name" : "p1_start_raw",
 					"strict" : false
 				},
 				{
-					"name" : "raw_player1_start",
+					"name" : "p2_start_raw",
 					"strict" : false
 				},
 				{
-					"name" : "raw_player2_start",
+					"name" : "confirm_raw",
 					"strict" : false
 				},
 				{
-					"name" : "raw_confirm",
+					"name" : "col_left_raw",
 					"strict" : false
 				},
 				{
-					"name" : "raw_col_left",
-					"strict" : false
-				},
-				{
-					"name" : "raw_col_right",
+					"name" : "col_right_raw",
 					"strict" : false
 				}
 			]

@@ -1,257 +1,171 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Modulo PRINCIPAL para Connect 4 (Versión corregida final con Debounce)
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Modulo PRINCIPAL para Connect 4 - Con startScreen y Controles Compartidos
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 module toplevel_connect4 (
     input clk,
-    input rst,
-    // Entradas del jugador 1 (FPGA) - RAW inputs from physical buttons
-    input raw_col_left,
-    input raw_col_right,
-    input raw_confirm,
-    input raw_start_game,      // Botón para iniciar el juego
-    input raw_player1_start,   // Botón para elegir jugador 1
-    input raw_player2_start,   // Botón para elegir jugador 2
-    // Comunicación con Arduino
-    input arduino_rx,
-    // Salidas VGA
+    input rst, // Reset activo alto
+
+    // --- Entradas RAW Controles Compartidos ---
+    input col_left_raw,
+    input col_right_raw,
+    input confirm_raw,
+    // --- Entradas RAW Inicio Separadas ---
+    input p1_start_raw,
+    input p2_start_raw,
+
+    // --- Salidas VGA ---
     output vgaclk,
     output hsync,
     output vsync,
     output sync_b,
     output blank_b,
-    output [7:0] r,
+    output [7:0] r, // << Salidas finales multiplexadas
     output [7:0] g,
     output [7:0] b,
-    // Salidas a displays
+    // ... (otras salidas: segments, p1_led, p2_led, game_over_led, estado) ...
     output [6:0] segments,
-    // Indicadores de estado
     output p1_led,
     output p2_led,
     output game_over_led,
-    // Debug
     output [3:0] estado
 );
 
-    // --- Señales Debounced ---
-    logic col_left;
-    logic col_right;
-    logic confirm;
-    logic start_game;
-    logic player1_start;
-    logic player2_start;
+    // --- PARÁMETROS GLOBALES ---
+    localparam CLK_FREQUENCY = 50_000_000; // ¡AJUSTA ESTO!
+    localparam DEBOUNCE_MS = 10;
 
-    // --- Instancias de Debounce ---
-    // Asume que tienes un clk base (e.g., 50MHz o 100MHz) para el debounce
-    // Ajusta Slow_Clock_Enable si tu clk principal es diferente
-    Button_debounce #( .CLK_FREQ(50_000_000), .STABLE_TIME_MS(10) ) debounce_left (
-    .clk(clk),
-    .rst(rst), // Conectar el reset (activo alto)
-    .button_in(raw_col_left),
-    .button_out(col_left) // Usar puerto de salida correcto
-	 );
-	 Button_debounce #( .CLK_FREQ(50_000_000), .STABLE_TIME_MS(10) ) debounce_right (
-		 .clk(clk),
-		 .rst(rst),
-		 .button_in(raw_col_right),
-		 .button_out(col_right)
-	 );
-	 Button_debounce #( .CLK_FREQ(50_000_000), .STABLE_TIME_MS(10) ) debounce_confirm (
-	 	 .clk(clk),
-	 	 .rst(rst),
-	 	 .button_in(raw_confirm),
-	 	 .button_out(confirm)
-	 );
-	 Button_debounce #( .CLK_FREQ(50_000_000), .STABLE_TIME_MS(10) ) debounce_start (
-	 	 .clk(clk),
-	 	 .rst(rst),
-	 	 .button_in(raw_start_game),
-	 	 .button_out(start_game) // Asegúrate que esta señal existe si usas un botón dedicado 'start_game'
-	 );
-	  Button_debounce #( .CLK_FREQ(50_000_000), .STABLE_TIME_MS(10) ) debounce_p1 (
-	 	 .clk(clk),
-	 	 .rst(rst),
-	 	 .button_in(raw_player1_start),
-	 	 .button_out(player1_start)
-	 );
-	 Button_debounce #( .CLK_FREQ(50_000_000), .STABLE_TIME_MS(10) ) debounce_p2 (
-		 .clk(clk),
-		 .rst(rst),
-		 .button_in(raw_player2_start),
-		 .button_out(player2_start)
-	 );
+    // --- Señales Internas ---
+    wire [9:0] x, y; // Coordenadas desde vgaController
+    wire [83:0] matrix;
+    wire [2:0] selected_col;
+    wire load_matrix;
+    wire move_valid;
+    wire [3:0] timer_count;
+    wire timer_done;
+    wire winner_found;
+    wire board_full;
+    wire [23:0] winning_line;
+    wire random_move;
+    wire random_move_valid;
+    wire [2:0] random_col;
+    wire [6:0] valid_columns;
+    wire reset_timer;
+    wire [1:0] current_player;
 
-    // --- Resto de señales internas ---
-    logic [9:0] x, y;
-    logic [83:0] matrix;
-    logic [2:0] selected_col;
-    logic load_matrix, move_valid;
-    logic [3:0] timer_count;
-    logic timer_done;
-    logic winner_found, board_full;
-    logic [23:0] winning_line;
-    logic player_won;
-    logic arduino_move_ready;
-    logic [2:0] arduino_col;
-    logic random_move, random_move_valid;
-    logic [2:0] random_col;
-    logic [6:0] valid_columns;
-    logic reset_timer;
-    logic [1:0] current_player;
-    logic [83:0] matrix_in; // Cambiado a 84 bits
-    logic [7:0] red_game, green_game, blue_game;
-    logic [7:0] red_start, green_start, blue_start;
+    // Señales DEBOUNCED
+    wire col_left_debounced;
+    wire col_right_debounced;
+    wire confirm_debounced;
+    wire p1_start_debounced;
+    wire p2_start_debounced;
 
-    // Reloj VGA
+    // --- Señales RGB intermedias para los dos generadores de video ---
+    wire [7:0] game_r, game_g, game_b;     // RGB desde videoGen (tablero del juego)
+    wire [7:0] start_r, start_g, start_b; // RGB desde startScreen
+
+    logic is_initial_state_active; // Para controlar el multiplexor de video
+	 logic is_game_over_state_active; // << NUEVO >>
+
+    // --- Instanciación Anti-Rebote (sin cambios respecto a la última versión) ---
+    Button_debounce #(.CLK_FREQ(CLK_FREQUENCY), .STABLE_TIME_MS(DEBOUNCE_MS))
+        debounce_shared_left (.clk(clk), .rst(rst), .button_in(col_left_raw), .button_out(col_left_debounced));
+    Button_debounce #(.CLK_FREQ(CLK_FREQUENCY), .STABLE_TIME_MS(DEBOUNCE_MS))
+        debounce_shared_right(.clk(clk), .rst(rst), .button_in(col_right_raw), .button_out(col_right_debounced));
+    Button_debounce #(.CLK_FREQ(CLK_FREQUENCY), .STABLE_TIME_MS(DEBOUNCE_MS))
+        debounce_shared_confirm(.clk(clk), .rst(rst), .button_in(confirm_raw), .button_out(confirm_debounced));
+    Button_debounce #(.CLK_FREQ(CLK_FREQUENCY), .STABLE_TIME_MS(DEBOUNCE_MS))
+        debounce_p1_start(.clk(clk), .rst(rst), .button_in(p1_start_raw), .button_out(p1_start_debounced));
+    Button_debounce #(.CLK_FREQ(CLK_FREQUENCY), .STABLE_TIME_MS(DEBOUNCE_MS))
+        debounce_p2_start(.clk(clk), .rst(rst), .button_in(p2_start_raw), .button_out(p2_start_debounced));
+
+    // --- Instancia PLL (Sin cambios) ---
     pll vgapll(.inclk0(clk), .c0(vgaclk));
 
-    // Controlador VGA
+    // --- Instancia Controlador VGA (Sin cambios) ---
+    // Genera vgaclk, hsync, vsync, sync_b, blank_b, x, y
     vgaController vgaCont(
-        .vgaclk(vgaclk),
-        .hsync(hsync),
-        .vsync(vsync),
-        .sync_b(sync_b),
-        .blank_b(blank_b),
-        .x(x),
-        .y(y)
+        .vgaclk(vgaclk), .hsync(hsync), .vsync(vsync), .sync_b(sync_b),
+        .blank_b(blank_b), .x(x), .y(y)
     );
 
-    // FSM - Ahora usa señales debounced
+    // --- Instancia FSM (Usa connect4_fsm_2player_fpga) ---
     connect4_fsm fsm(
-        .clk(clk),
-        .rst(rst),
-        // .player1_start(start_game), // Si 'start_game' es el único botón de inicio
-        .player1_start(player1_start), // Usa las señales debounced
-        .player2_start(player2_start), // Usa las señales debounced
-	.move_valid(move_valid || random_move_valid || arduino_move_ready),
-        .arduino_ready(arduino_move_ready),
-        .winner_found(winner_found),
-        .board_full(board_full),
-        .timer_done(timer_done),
-        .reset_timer(reset_timer),
-        .p1_turn(p1_led),
-        .p2_turn(p2_led),
-        .game_over(game_over_led),
-        .estado(estado),
-        .random_move(random_move),
-        .player(current_player)
+        .clk(clk), .rst(rst), .player1_start(p1_start_debounced), .player2_start(p2_start_debounced),
+        .move_valid(move_valid), .winner_found(winner_found), .board_full(board_full), .timer_done(timer_done),
+        .reset_timer(reset_timer), .p1_turn(p1_led), .p2_turn(p2_led), .game_over(game_over_led),
+        .estado(estado), .random_move(random_move), .player(current_player)
     );
 
-    // Control de la matriz - Ahora usa señales debounced
+    // --- Instancia Controlador Matriz (Para controles compartidos) ---
     matrixTableroControl matrixCtrl(
-        .clk(clk),
-        .rst_n(~rst),
-        .col_left(col_left),     // Usa señal debounced
-        .col_right(col_right),   // Usa señal debounced
-        .confirm(confirm),       // Usa señal debounced
-        .arduino_move(arduino_move_ready),
-        .arduino_col(arduino_col),
-        .current_state(estado),
-        .matrix_in(matrix),      // Conecta matrix (salida del registro) aquí
-        .matrix_out(matrix_in),  // Salida hacia el registro
-        .selected_col(selected_col),
-        .load(load_matrix),
-        .move_valid(move_valid),
-        .random_move_valid(random_move_valid), // Necesita entrada para el control
-        .random_col(random_col)                // Necesita entrada para el control
+         .clk(clk), .rst_n(~rst), .col_left(col_left_debounced), .col_right(col_right_debounced), .confirm(confirm_debounced),
+         .random_move_valid(random_move_valid), .random_col(random_col), .current_state(estado), .matrix_in(matrix),
+         .selected_col(selected_col), .load(load_matrix), .move_valid(move_valid)
     );
 
-    // Registro de la matriz
+    // --- Instancia Matriz (Usa gravedad datos 0->5) ---
     matrixTablero matrixReg(
-        .clk(clk),
-        .rst_n(~rst),
-        .data_in(matrix_in),  // Entrada desde matrixCtrl
-        .load(load_matrix),
-        // Determina la columna basada en si es movimiento aleatorio o seleccionado
-        .column(random_move_valid ? random_col : (arduino_move_ready ? arduino_col : selected_col)),
-        .player(current_player[0]), // player[0] es 0 para P1 (01), 1 para P2 (10)
-        .matrix(matrix)       // Salida del estado actual de la matriz
+        .clk(clk), .rst_n(~rst), .load(load_matrix), .column(selected_col),
+        .player(current_player[0]), .matrix(matrix)
     );
 
-    // Detección de ganador
+    // --- Instancia Detector Ganador (Sin cambios) ---
     winner_detection winnerDetect(
-        .grid(matrix),
-        .winner_found(winner_found),
-        .player_won(player_won),
-        .winning_line(winning_line)
+        .grid(matrix), .winner_found(winner_found), .winning_line(winning_line)
     );
 
-    // Temporizador
-    Full_Timer timer(
-        .clk_in(clk),
-        .rst_in(reset_timer), // La FSM controla el reset del timer
-        .done(timer_done),
-        .count_out(timer_count)
-    );
+    // --- Instancias Timer, BCD, RandomSel (Sin cambios) ---
+    Full_Timer timer(.clk_in(clk), .rst_in(reset_timer), .done(timer_done), .count_out(timer_count));
+    BCD_Visualizer segDisplay(.bin(timer_count), .seg(segments));
+    random_selector randomSel(.clk(clk), .rst_n(~rst), .valid_cols(valid_columns), .generate_move(random_move), .random_col(random_col), .valid_move(random_move_valid));
 
-    // Display BCD
-    BCD_Visualizer segDisplay(
-        .bin(timer_count),
-        .seg(segments)
-    );
+    // --- Lógica Columnas Válidas (Sin cambios) ---
+    assign valid_columns[6] = (matrix[(5*7 + 6)*2 +: 2] == 2'b00); // Col 6, Fila Datos 5 (VISUALMENTE ARRIBA)
+    assign valid_columns[5] = (matrix[(5*7 + 5)*2 +: 2] == 2'b00); // Col 5, Fila Datos 5
+    assign valid_columns[4] = (matrix[(5*7 + 4)*2 +: 2] == 2'b00); // Col 4, Fila Datos 5
+    assign valid_columns[3] = (matrix[(5*7 + 3)*2 +: 2] == 2'b00); // Col 3, Fila Datos 5
+    assign valid_columns[2] = (matrix[(5*7 + 2)*2 +: 2] == 2'b00); // Col 2, Fila Datos 5
+    assign valid_columns[1] = (matrix[(5*7 + 1)*2 +: 2] == 2'b00); // Col 1, Fila Datos 5
+    assign valid_columns[0] = (matrix[(5*7 + 0)*2 +: 2] == 2'b00); // Col 0, Fila Datos 5
 
-    // Interfaz Arduino
-    arduino_interface arduino(
-        .clk(clk),
-        .rst_n(~rst),
-        .rx_data(arduino_rx),
-        .column(arduino_col),
-        .move_ready(arduino_move_ready),
-        .error() // Conectar si se necesita manejar errores UART
-    );
 
-    // Movimiento aleatorio
-    random_selector randomSel(
-        .clk(clk),
-        .rst_n(~rst),
-        .valid_cols(valid_columns),
-        .generate_move(random_move), // Señal desde la FSM
-        .random_col(random_col),
-        .valid_move(random_move_valid)
-    );
-
-    // Lógica para determinar columnas válidas (basado en la fila superior)
-    assign valid_columns = {
-        (matrix[(5*7 + 6)*2 +: 2] == 2'b00), // Col 6
-        (matrix[(5*7 + 5)*2 +: 2] == 2'b00), // Col 5
-        (matrix[(5*7 + 4)*2 +: 2] == 2'b00), // Col 4
-        (matrix[(5*7 + 3)*2 +: 2] == 2'b00), // Col 3
-        (matrix[(5*7 + 2)*2 +: 2] == 2'b00), // Col 2
-        (matrix[(5*7 + 1)*2 +: 2] == 2'b00), // Col 1
-        (matrix[(5*7 + 0)*2 +: 2] == 2'b00)  // Col 0
-    };
-
-    // Video del juego
-    videoGen vgaGen(
-        .clk(clk), // Usar clk principal, no vgaclk para la lógica
+    // --- Instancia Generador Video VGA para el JUEGO ---
+    // (Este es tu videoGen.sv que dibuja el tablero, fichas, etc., e invierte visualización)
+    videoGen gameBoardDrawer ( // Renombrado para claridad
+        .clk(clk),       // O vgaclk, según necesite tu videoGen para su propia lógica interna
         .rst_n(~rst),
         .x_pos(x),
         .y_pos(y),
         .grid_state(matrix),
-        .current_state(estado),
+        .current_state(estado), // Para que videoGen sepa si es P_INICIO, GAME_OVER, etc.
         .selected_col(selected_col),
         .winning_line(winning_line),
-        .red(red_game),
-        .green(green_game),
-        .blue(blue_game)
+        .red(game_r),    // Salida R del dibujador del juego
+        .green(game_g),  // Salida G del dibujador del juego
+        .blue(game_b)    // Salida B del dibujador del juego
     );
 
-    // Pantalla de inicio
-    startScreen splash(
-        .x(x),
-        .y(y),
-        .visible(estado == 4'b0000),  // Visible solo en P_INICIO
-        .r(red_start),
-        .g(green_start),
-        .b(blue_start)
+    // --- INSTANCIAR TU MÓDULO startScreen ---
+    assign is_initial_state_active = (estado == 4'b0000); // P_INICIO desde FSM
+	 assign is_game_over_state_active = (estado == 4'b1000); // GAME_OVER
+
+    startScreen initialScreenDrawer (
+        .x(x),                         // Coordenada X desde vgaController
+        .y(y),                         // Coordenada Y desde vgaController
+        .visible(is_initial_state_active), // Se muestra solo si la FSM está en P_INICIO
+        .r(start_r),                   // Salida R de la pantalla de inicio
+        .g(start_g),                   // Salida G de la pantalla de inicio
+        .b(start_b)                    // Salida B de la pantalla de inicio
     );
 
-    // Selección de color VGA según el estado
-    assign r = (blank_b) ? ((estado == 4'b0000) ? red_start : red_game) : 8'h00;
-    assign g = (blank_b) ? ((estado == 4'b0000) ? green_start : green_game) : 8'h00;
-    assign b = (blank_b) ? ((estado == 4'b0000) ? blue_start : blue_game) : 8'h00;
+    // --- Multiplexor de Salida RGB Final ---
+    // Si es el estado inicial, usa los colores de startScreen, si no, los de videoGen (juego)
+    assign r = is_initial_state_active ? start_r : game_r;
+    assign g = is_initial_state_active ? start_g : game_g;
+    assign b = is_initial_state_active ? start_b : game_b;
 
-    // Tablero lleno (Verifica si todas las celdas de la fila superior están ocupadas)
-    assign board_full = &valid_columns; // Simplificado: si no hay columnas válidas, está lleno
+    // --- Lógica Combinacional: Tablero Lleno (Sin cambios) ---
+    assign board_full = (valid_columns == 7'b0) && !winner_found;
 
 endmodule

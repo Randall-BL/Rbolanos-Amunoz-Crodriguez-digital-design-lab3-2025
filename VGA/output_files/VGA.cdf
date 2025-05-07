@@ -1,4 +1,4 @@
-/* Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition */
+/* Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSXFC6D6F31) Path("E:/Maquinas Virtuales/Carpeta Compartida/Laboratorio_3/VGA/output_files/") File("VGA.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSXFC6D6F31) Path("C:/Users/andre/OneDrive/Escritorio/TDD/Rbolanos-Amunoz-Crodriguez-digital-design-lab3-2025-DevelopVGA/VGA/output_files/") File("VGA.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

@@ -2,22 +2,24 @@
 // Modulo Debounce Simple Basado en Contador
 ////////////////////////////////////////////////////////////////////////
 module Button_debounce #(
-    parameter CLK_FREQ      = 50_000_000, // Frecuencia del reloj de entrada (Hz)
+    parameter CLK_FREQ       = 50_000_000, // Frecuencia del reloj de entrada (Hz) - ¡AJUSTAR!
     parameter STABLE_TIME_MS = 10          // Tiempo de estabilidad deseado (ms)
 ) (
-    input  logic clk,          // Reloj del sistema
-    input  logic rst,          // Reset (activo alto)
-    input  logic button_in,    // Entrada directa del botón (ruidosa)
-    output logic button_out    // Salida estable del botón
+    input  logic clk,         // Reloj del sistema
+    input  logic rst,         // Reset (activo alto)
+    input  logic button_in,   // Entrada directa del botón (ruidosa)
+    output logic button_out   // Salida estable del botón
 );
 
     localparam COUNTER_BITS = $clog2(STABLE_TIME_MS * (CLK_FREQ / 1000));
-    localparam MAX_COUNT    = STABLE_TIME_MS * (CLK_FREQ / 1000) - 1;
+    // Asegurar que COUNTER_BITS sea al menos 1
+    localparam SAFE_COUNTER_BITS = (COUNTER_BITS == 0) ? 1 : COUNTER_BITS;
+    localparam MAX_COUNT     = STABLE_TIME_MS * (CLK_FREQ / 1000) - 1;
 
-    logic [COUNTER_BITS-1:0] count;
+    logic [SAFE_COUNTER_BITS-1:0] count;
     logic sync_ff1, sync_ff2; // Sincronizadores de entrada
     logic debounced_state_reg;
-    logic next_debounced_state;
+    // logic next_debounced_state; // No es necesario si usamos bloqueo en always_ff
 
     // Sincronizar la entrada asíncrona del botón con el reloj del sistema
     always_ff @(posedge clk or posedge rst) begin
@@ -31,8 +33,6 @@ module Button_debounce #(
     end
 
     // Lógica del Debounce
-    assign next_debounced_state = debounced_state_reg; // Por defecto, mantener estado
-
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
             debounced_state_reg <= 1'b0; // Estado inicial (asume botón no presionado)
@@ -57,3 +57,9 @@ module Button_debounce #(
     assign button_out = debounced_state_reg;
 
 endmodule
+
+//======================================================================
+
+
+
+
