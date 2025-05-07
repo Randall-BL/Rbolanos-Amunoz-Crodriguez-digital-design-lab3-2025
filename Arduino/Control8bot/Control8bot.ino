@@ -26,16 +26,13 @@ void loop() {
   // Movimiento izquierda
   if (btnIzq == LOW && btnIzqAnterior == HIGH) {
     columnaActual = (columnaActual == 0) ? 6 : columnaActual - 1;
-    Serial.print("Columna actual: ");
-    Serial.println(columnaActual);
+
     delay(200); // Antirrebound
   }
 
   // Movimiento derecha
   if (btnDer == LOW && btnDerAnterior == HIGH) {
     columnaActual = (columnaActual == 6) ? 0 : columnaActual + 1;
-    Serial.print("Columna actual: ");
-    Serial.println(columnaActual);
     delay(200); 
 
   }
@@ -43,8 +40,7 @@ void loop() {
   // Seleccionar columna actual
   if (btnSel == LOW && btnSelAnterior == HIGH) {
     Serial.write('0' + columnaActual); // Envía por UART como ASCII
-    Serial.print("Columna enviada: ");
-    Serial.println(columnaActual);
+
     delay(200); 
   }
 
