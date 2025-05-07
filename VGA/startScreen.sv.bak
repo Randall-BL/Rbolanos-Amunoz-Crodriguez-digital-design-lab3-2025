@@ -1,0 +1,11 @@
+module startScreen(
+    input logic [9:0] x, y,
+    output logic [7:0] r, g, b
+);
+    // Dibuja la palabra "START" en la pantalla (o cualquier otro gráfico que desees)
+    logic startText;
+    assign startText = (x >= 200 && x <= 400 && y >= 100 && y <= 200); // Ejemplo de un rectángulo simple
+    assign r = (startText) ? 8'hFF : 8'h00; // Rojo para "START"
+    assign g = 8'h00;
+    assign b = 8'h00;
+endmodule

@@ -1,0 +1,71 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Modulo para detectar 4 en línea en cualquier dirección
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+module winner_detection (
+    input logic [41:0] grid,       // Matriz 6x7 (2 bits por celda)
+    output logic winner_found,     // Señal de ganador encontrado
+    output logic player_won,       // Jugador que ganó (0=P1, 1=P2)
+    output logic [23:0] winning_line // {start_row, start_col, end_row, end_col}
+);
+
+    function automatic logic check_line(
+        input logic [5:0] row,
+        input logic [2:0] col,
+        input logic [1:0] player,
+        input logic [1:0] dir_row,
+        input logic [1:0] dir_col
+    );
+        if (row + 3*dir_row >= 6 || col + 3*dir_col >= 7)
+            return 0;
+            
+        for (int i = 0; i < 4; i++) begin
+            if (grid[((row + i*dir_row)*7 + (col + i*dir_col))*2 +: 2] != player)
+                return 0;
+        end
+        return 1;
+    endfunction
+
+    always_comb begin
+        winner_found = 0;
+        player_won = 0;
+        winning_line = 24'b0;
+        
+        // Buscar para ambos jugadores
+        for (int p = 1; p <= 2; p++) begin
+            // Buscar en todas las posiciones
+            for (int row = 0; row < 6; row++) begin
+                for (int col = 0; col < 7; col++) begin
+                    // Verificar horizontal
+                    if (check_line(row, col, p, 0, 1)) begin
+                        winner_found = 1;
+                        player_won = p-1;
+                        winning_line = {row, col, row, col+3};
+                        return;
+                    end
+                    // Verificar vertical
+                    if (check_line(row, col, p, 1, 0)) begin
+                        winner_found = 1;
+                        player_won = p-1;
+                        winning_line = {row, col, row+3, col};
+                        return;
+                    end
+                    // Verificar diagonal \
+                    if (check_line(row, col, p, 1, 1)) begin
+                        winner_found = 1;
+                        player_won = p-1;
+                        winning_line = {row, col, row+3, col+3};
+                        return;
+                    end
+                    // Verificar diagonal /
+                    if (check_line(row, col, p, 1, -1)) begin
+                        winner_found = 1;
+                        player_won = p-1;
+                        winning_line = {row, col, row+3, col-3};
+                        return;
+                    end
+                end
+            end
+        end
+    end
+endmodule

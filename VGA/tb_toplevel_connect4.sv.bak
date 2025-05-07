@@ -1,0 +1,102 @@
+`timescale 1ns/1ps
+
+module tb_toplevel_connect4;
+
+    // Entradas
+    logic clk;
+    logic rst;
+    logic col_left, col_right, confirm;
+    logic player1_start, player2_start;
+    logic arduino_rx;
+
+    // Salidas
+    logic vgaclk;
+    logic hsync, vsync, sync_b, blank_b;
+    logic [7:0] r, g, b;
+    logic [6:0] segments;
+    logic p1_led, p2_led, game_over_led;
+    logic [3:0] estado;
+
+    // Instancia del DUT (Device Under Test)
+    toplevel_connect4 uut (
+        .clk(clk),
+        .rst(rst),
+        .col_left(col_left),
+        .col_right(col_right),
+        .confirm(confirm),
+        .player1_start(player1_start),
+        .player2_start(player2_start),
+        .arduino_rx(arduino_rx),
+        .vgaclk(vgaclk),
+        .hsync(hsync),
+        .vsync(vsync),
+        .sync_b(sync_b),
+        .blank_b(blank_b),
+        .r(r),
+        .g(g),
+        .b(b),
+        .segments(segments),
+        .p1_led(p1_led),
+        .p2_led(p2_led),
+        .game_over_led(game_over_led),
+        .estado(estado)
+    );
+
+    // Generar reloj 50 MHz
+    initial begin
+        clk = 0;
+        forever #10 clk = ~clk; // Periodo 20ns → 50MHz
+    end
+
+    // Estimulo principal
+    initial begin
+        // Inicializar
+        rst = 1;
+        col_left = 0;
+        col_right = 0;
+        confirm = 0;
+        player1_start = 0;
+        player2_start = 0;
+        arduino_rx = 0;
+
+        // Reset activo
+        #50;
+        rst = 0;
+
+        // Tiempo 100ns: Pantalla de inicio, presionar player1_start
+        #50;
+        player1_start = 1;
+        #20;
+        player1_start = 0;
+
+        // Tiempo 200ns: Simular movimiento hacia la derecha
+        #100;
+        col_right = 1;
+        #20;
+        col_right = 0;
+
+        // Tiempo 300ns: Confirmar la selección de columna
+        #100;
+        confirm = 1;
+        #20;
+        confirm = 0;
+
+        // Tiempo 500ns: Simular Arduino enviando un movimiento
+        #200;
+        arduino_rx = 1;
+        #20;
+        arduino_rx = 0;
+
+        // Continuar simulación un poco más para ver VGA
+        #1000;
+
+        $finish;
+    end
+
+    // Monitoreo para consola
+    initial begin
+        $monitor("Tiempo=%0t | Estado=%b | p1_led=%b | p2_led=%b | game_over_led=%b | r=%h g=%h b=%h",
+                 $time, estado, p1_led, p2_led, game_over_led, r, g, b);
+    end
+
+endmodule

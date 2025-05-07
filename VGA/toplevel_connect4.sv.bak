@@ -1,0 +1,168 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Modulo PRINCIPAL para Connect 4
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+module toplevel_connect4 (
+    input logic clk, rst,
+    // Entradas del jugador 1 (FPGA)
+    input logic col_left, col_right, confirm,
+    input logic player1_start, player2_start,
+    // Comunicación con Arduino
+    input logic arduino_rx,
+    // Salidas VGA
+    output logic vgaclk, hsync, vsync, sync_b, blank_b,
+    output logic [7:0] r, g, b,
+    // Salidas a displays
+    output logic [6:0] segments,
+    // Indicadores de estado
+    output logic p1_led, p2_led, game_over_led,
+    // Debug
+    output logic [3:0] estado
+);
+
+    // Señales internas
+    logic [9:0] x, y;
+    logic [41:0] matrix;
+    logic [2:0] selected_col;
+    logic load_matrix, move_valid;
+    logic [3:0] timer_count;
+    logic timer_done;
+    logic winner_found, board_full;
+    logic [23:0] winning_line;
+    logic player_won;
+    logic arduino_move_ready;
+    logic [2:0] arduino_col;
+    logic random_move, random_move_valid;
+    logic [2:0] random_col;
+    logic [6:0] valid_columns;
+    
+    // Generación de reloj VGA (25.175 MHz)
+    pll vgapll(.inclk0(clk), .c0(vgaclk));
+    
+    // Instancia del controlador VGA
+    vgaController vgaCont(
+        .vgaclk(vgaclk),
+        .hsync(hsync),
+        .vsync(vsync),
+        .sync_b(sync_b),
+        .blank_b(blank_b),
+        .x(x),
+        .y(y)
+    );
+    
+    // Instancia de la FSM
+    connect4_fsm fsm(
+        .clk(clk),
+        .rst(rst),
+        .player1_start(player1_start),
+        .player2_start(player2_start),
+        .move_valid(move_valid || random_move_valid),
+        .arduino_ready(arduino_move_ready),
+        .winner_found(winner_found),
+        .board_full(board_full),
+        .timer_done(timer_done),
+        .reset_timer(reset_timer),
+        .p1_turn(p1_led),
+        .p2_turn(p2_led),
+        .game_over(game_over_led),
+        .estado(estado),
+        .random_move(random_move),
+        .player(current_player)
+    );
+    
+    // Instancia del controlador de matriz
+    matrixTableroControl matrixCtrl(
+        .clk(clk),
+        .rst_n(~rst),
+        .col_left(col_left),
+        .col_right(col_right),
+        .confirm(confirm),
+        .arduino_move(arduino_move_ready),
+        .arduino_col(arduino_col),
+        .current_state(estado),
+        .matrix_in(matrix),
+        .matrix_out(matrix_in),
+        .selected_col(selected_col),
+        .load(load_matrix),
+        .move_valid(move_valid)
+    );
+    
+    // Instancia de la matriz
+    matrixTablero matrixReg(
+        .clk(clk),
+        .rst_n(~rst),
+        .data_in(matrix_in),
+        .load(load_matrix),
+        .column(random_move_valid ? random_col : selected_col),
+        .player(current_player[0]), // 0=P1, 1=P2
+        .matrix(matrix)
+    );
+    
+    // Instancia del detector de ganador
+    winner_detection winnerDetect(
+        .grid(matrix),
+        .winner_found(winner_found),
+        .player_won(player_won),
+        .winning_line(winning_line)
+    );
+    
+    // Instancia del temporizador
+    Full_Timer timer(
+        .clk_in(clk),
+        .rst_in(reset_timer),
+        .done(timer_done),
+        .count_out(timer_count)
+    );
+    
+    // Instancia del visualizador BCD
+    BCD_Visualizer segDisplay(
+        .bin(timer_count),
+        .seg(segments)
+    );
+    
+    // Instancia de la interfaz Arduino
+    arduino_interface arduino(
+        .clk(clk),
+        .rst_n(~rst),
+        .rx_data(arduino_rx),
+        .column(arduino_col),
+        .move_ready(arduino_move_ready),
+        .error()
+    );
+    
+    // Instancia del selector aleatorio
+    random_selector randomSel(
+        .clk(clk),
+        .rst_n(~rst),
+        .valid_cols(valid_columns),
+        .generate_move(random_move),
+        .random_col(random_col),
+        .valid_move(random_move_valid)
+    );
+    
+    // Calcular columnas válidas
+    always_comb begin
+        for (int col = 0; col < 7; col++) begin
+            valid_columns[col] = (matrix[5*7 + col] == 1'b0); // Verificar si la fila superior está vacía
+        end
+    end
+    
+    // Instancia del generador de video
+    videoGen vgaGen(
+        .clk(clk),
+        .rst_n(~rst),
+        .x_pos(x),
+        .y_pos(y),
+        .grid_state(matrix),
+        .current_state(estado),
+        .selected_col(selected_col),
+        .winning_line(winning_line),
+        .red(r),
+        .green(g),
+        .blue(b)
+    );
+    
+    // Detectar tablero lleno
+    assign board_full = (matrix == 42'b0); // Esto necesita ajustarse según la representación real
+    
+endmodule
